@@ -1,0 +1,25 @@
+          LOPUES EAST CENTER          
+       Villamonte, Bacolod City       
+RunDate:11/30/2008 7:17pm      00000365
+Term/Serial No.       20/EPSONAEFK002274
+Cashier:GINA COMANDAC SN:7541000003653  
+----------------------------------------
+Name    :MORALES ROSE G                
+Card    :08 000001468                  
+
+PROJECT GK                     5/Cpn                                 
+Transaction 11/30/2008        
+#Coupons:1                             
+#From   :00002059                      
+#To     :00002059                      
+
+Points Converted  :5       
+Points Balance    :114.84  
+----------------------------------------
+
+
+
+
+
+
+

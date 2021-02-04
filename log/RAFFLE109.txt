@@ -1,0 +1,25 @@
+          LOPUES EAST CENTER          
+       Villamonte, Bacolod City       
+RunDate:01/16/2009 5:04pm      00000423
+Term/Serial No.       09/EPSONAEFK011307
+Cashier:Restico Buyco SN:12226000004231 
+----------------------------------------
+Name    :BRIGHT CLINT                  
+Card    :08000005754                   
+
+PROJECT GK                     5/Cpn                                 
+Transaction 01/16/2009        
+#Coupons:56                            
+#From   :00002626                      
+#To     :00002681                      
+
+Points Converted  :280     
+Points Balance    :0.54    
+----------------------------------------
+
+
+
+
+
+
+

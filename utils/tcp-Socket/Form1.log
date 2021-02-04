@@ -1,0 +1,12 @@
+Line 29: Class SysTrayCtl.cSysTray of control cSystray1 was not a loaded control class.
+Line 126: Class MSWinsockLib.Winsock of control Winsock1 was not a loaded control class.
+Line 32: The property name _ExtentX in cSystray1 is invalid.
+Line 33: The property name _ExtentY in cSystray1 is invalid.
+Line 34: The property name InTray in cSystray1 is invalid.
+Line 35: The property name TrayIcon in cSystray1 is invalid.
+Line 36: The property name TrayTip in cSystray1 is invalid.
+Line 129: The property name _ExtentX in Winsock1 is invalid.
+Line 130: The property name _ExtentY in Winsock1 is invalid.
+Line 131: The property name _Version in Winsock1 is invalid.
+Line 132: The property name Protocol in Winsock1 is invalid.
+Line 133: The property name LocalPort in Winsock1 is invalid.

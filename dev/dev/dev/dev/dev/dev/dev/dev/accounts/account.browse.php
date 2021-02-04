@@ -1,0 +1,174 @@
+<?
+  	if (!session_is_registered('aAcctBrowse'))
+	{
+		session_register('aAcctBrowse');
+		$aAcctBrowse = null;
+		$aAcctBrowse = array();
+	}
+	if ($act != '')
+	{
+		$aAcctBrowse['account_type'] = $act;
+	}
+
+	if ($p1 == 'Go')
+	{
+		$aAcctBrowse['searchby'] = $_REQUEST['searchby'];
+		$aAcctBrowse['xSearch'] = $_REQUEST['xSearch'];
+		$aAcctBrowse['sort'] = $_REQUEST['sort'];
+		$aAcctBrowse['maccount_class_id'] = $_REQUEST['maccount_class_id'];
+	}
+
+	if ($aAcctBrowse['sort']  == '') $aAcctBrowse['sort'] = 'cardno, account';
+  
+  	$q = "select * from account  ";
+	if ($aAcctBrowse['account_type'] == 'S')
+	{
+		$q .= " where account_type_id ='1' ";
+	}
+	elseif ($aAcctBrowse['account_type'] == 'Y')
+	{
+		$q .= " where account_type_id in ('4' ) ";
+	}
+	elseif ($aAcctBrowse['account_type'] == 'C')
+	{
+		$q .= " where account_type_id in (2,3,5,6,7) ";
+	}
+	else 
+	{
+		$q .= " where true ";
+	}
+	if (1*$aAcctBrowse['maccount_class_id'] !='0')
+	{
+		$q.= " and account_class_id='".$aAcctBrowse['maccount_class_id']."'";
+	}
+	
+	if ($searchby == '') $searchby = 'account';
+	if ($search != '' && ($searchby=='cardno' || $searchby=='account_id' || $searchby=='account_code'))
+	{
+		$q .= " and $searchby like '%$search%' ";
+	}
+	elseif ($search != '' )
+	{
+		$q .= " and $searchby ilike '%$search%' ";
+	}
+	$q .= " order by ".$aAcctBrowse['sort'];
+
+	if ($p1 == 'Go' or $p1 == '')
+	{
+		$start = 0;
+	}
+	elseif ($p1 == 'Next')
+	{
+		$start += 15;
+	}
+	elseif ($p1 == 'Previous')
+	{
+		$start -= 15;
+	}
+	if ($start<0) $start=0;
+	
+	$q .= " offset $start limit 15 ";
+
+	$qr = pg_query($q) or message1("Error querying account data...".pg_errormessage().$q);
+
+	if (pg_num_rows($qr) == 0 && $p1!= '') message("Account data [NOT] found...");
+?>
+<form name="form1" method="post" action="?p=account.browse" style="margin:0">
+  <table width="85%" border="0" align="center" cellpadding="2" cellspacing="1">
+    <tr> 
+      <td>Search 
+        <input name="search" type="text" id="search" value="<?= $search;?>"  onKeypress="if(event.keyCode == 13){document.getElementById('go').click();return false;}">
+		<?=lookUpAssoc('searchby',array('Card No.'=>'cardno','Account No.'=>'account_code','Account Name'=>'account', 'Record Id'=>'account_id'),$aAcctBrowse['searchby']);?>
+        <select name="maccount_class_id"   style=" width:220px">
+          <option value=''>--Show All Classifications--</option>
+          <?
+	  	$q = "select * from account_class where enable='Y' order by account_class_code,account_class";
+		$qqr = @pg_query($q);
+		while ($r = @pg_fetch_object($qqr))
+		{
+			if ($r->account_class_id == $aAcctBrowse['maccount_class_id'])
+			{
+				echo "<option value=$r->account_class_id selected>".substr($r->account_class_code,0,6)." $r->account_class</option>";
+			}
+			else
+			{
+				echo "<option value=$r->account_class_id>".substr($r->account_class_code,0,6)." $r->account_class</option>";
+			}
+		}
+	  ?>
+        </select> 
+        <input name="p1" type="submit" id="go" value="Go" accesskey="G">
+        <input type="button" name="Submit2" value="Add New" onClick="window.location='?p=account&p1=New'" accesskey="N">
+        <input type="button" name="Submit222" value="Browse" onClick="window.location='?p=account.browse&act=C'" accesskey="B">
+        <input type="button" name="Submit23" value="Close" onClick="window.location='?p='" accesskey="C">
+        <hr color="#CC0000"></td>
+    </tr>
+  </table>
+
+<table width="85%" border="0" align="center" cellpadding="2" cellspacing="1" bgcolor="#EFEFEF">
+  <tr bgcolor="#CCCCCC"> 
+    <td height="20" colspan="6"  background="../graphics/table0_horizontal.PNG"><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+      <img src="../graphics/team_wksp.gif" width="16" height="17"> Browse Account 
+      Information</strong></font></td>
+  </tr>
+  <tr> 
+    <td><strong><font size="2" face="Verdana, Arial, Helvetica, sans-serif">#</font></strong></td>
+    <td><strong><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><a href="?p=account.browse&p1=Go&sort=account">Account 
+      Name</a></font></strong></td>
+    <td><strong><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><a href="?p=account.browse&p1=Go&sort=cardno">Card 
+      No.</a> </font></strong></td>
+    <td><strong><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><a href="?p=account.browse&p1=Go&sort=account_code">Account 
+      No.</a> </font></strong></td>
+    <td><strong><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><a href="?p=account.browse&sort=account_class_id,account">Classification</a></font></strong></td>
+    <td><strong><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Enable</font></strong></td>
+  </tr>
+ <?
+ 	$ctr=0;
+	while ($r = @pg_fetch_object($qr))
+	{
+		$ctr++;
+		if (!in_array($r->account_type,array('S','N','Y')))
+		{
+			$href = "?p=account&p1=Load&id=$r->account_id";
+		}
+		else
+		{
+			$href = "?p=account.other&p1=Load&id=$r->account_id";
+		}	
+  ?>
+   <tr onMouseOver="bgColor='#FFFFDD'" onMouseOut="bgColor='#FFFFFF'" bgcolor="#FFFFFF"> 
+    <td width="6%" align="right" nowrap><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
+      <?= $ctr;?>
+      .</font></td>
+    <td width="37%""><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
+      <a href="<?=$href;?>"> 
+      <?= $r->account;?>
+      </a> </font></td>
+    <td width="9%""><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><a href="<?=$href;?>">
+      <?= $r->cardno;?>
+      </a></font></td>
+    <td width="17%""><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><a href="<?=$href;?>"> 
+      <?= $r->account_code;?>
+      </a></font></td>
+    <td width="22%""><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
+      <?= lookUpTableReturnValue('x','account_class','account_class_id','account_class',$r->account_class_id);?>
+      </font></td>
+    <td width="9%"><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
+      <?=($r->enable=='Y' ? 'Yes' : 'No' );?>
+      </font></td>
+  </tr>
+  <?
+  }
+  ?>
+  <tr> 
+    <td colspan="6" bgcolor="#FFFFFF"><input type="button" name="Submit22" value="Add New" onClick="window.location='?p=account&p1=New'"> 
+      <input type="button" name="Submit232" value="Close" onClick="window.location='?p='"></td>
+  </tr>
+</table>
+</form>
+<div align="center"> <a href="?p=account.browse&p1=Previous&start=<?=$start;?>&search=<?=$search;?>&searchby=<?=$searchby;?>"><img src="../graphics/redarrow_left.gif" width="4" height="7" border="0"></a> 
+  <a href="?p=account.browse&p1=Previous&start=<?=$start;?>&search=<?=$search;?>&searchby=<?=$searchby;?>"> 
+  Previous</a> | <a href="?p=account.browse&p1=Next&start=<?=$start;?>&search=<?=$search;?>&searchby=<?=$searchby;?>">Next</a> 
+  <a href="?p=account.browse&p1=Next&start=<?=$start;?>&search=<?=$search;?>&searchby=<?=$searchby;?>"><img src="../graphics/redarrow_right.gif" width="4" height="7" border="0"></a> 
+</div>
+<script>document.getElementById('search').focus();</script>

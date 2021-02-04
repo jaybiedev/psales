@@ -1,0 +1,14 @@
+Lopues East Center
+Villamonte, Bacolod City
+Register :02
+Serial   :EPSONAEFK011293
+Transaction : 12/03/2008
+Printed     : 12/04/2008 12:30pm
+ Docket          Cashier        Amount 
+---------- ----------------- -----------
+
+*** Date: 12/03/2008
+00361930   JESBE                   29.00
+TOTAL..........                    29.00
+
+

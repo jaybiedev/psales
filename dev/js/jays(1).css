@@ -1,0 +1,132 @@
+.IEMenu {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #000000; LINE-HEIGHT: 12pt; MARGIN-RIGHT: 1px; FONT-FAMILY: Verdana,Arial, Sans-serif
+}
+.IEfontmenu {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #000000; LINE-HEIGHT: 20px; MARGIN-RIGHT: 1px; FONT-FAMILY: Verdana,Arial, Sans-serif
+}
+.NavMenu {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; MARGIN-LEFT: 0pt; COLOR: #000000; LINE-HEIGHT: 10pt; FONT-FAMILY: Verdana,Arial, Sans-serif
+}
+.Navfontmenu {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; MARGIN-LEFT: -11pt; COLOR: #000000; LINE-HEIGHT: 11pt; FONT-FAMILY: Verdana,Arial, Sans-serif
+}
+.channelinks {
+	COLOR: #000080
+}
+.bottomlink {
+	FONT-SIZE: 8pt; COLOR: white; FONT-FAMILY: Arial,Helvetica,sans-serif
+}
+.links {
+	FONT-SIZE: 8pt; FONT-FAMILY: Arial,Helvetica,sans-serif
+}
+.bodyhome {
+	FONT-SIZE: 8pt; LEFT: 0px; FONT-FAMILY: Arial,verdana,Helvetica,sans-serif; POSITION: absolute; TOP: 82px
+}
+.body {
+	FONT-SIZE: 8pt; LEFT: 0px; FONT-FAMILY: Arial,verdana,Helvetica,sans-serif; POSITION: absolute; TOP: 0px
+}
+.body2 {
+	FONT-SIZE: 8pt; LEFT: 800px; FONT-FAMILY: Arial,verdana,Helvetica,sans-serif; POSITION: absolute; TOP: 70px
+}
+.ReadMore {
+	FONT-SIZE: 8pt; COLOR: #000080; FONT-FAMILY: arial,Helvetica,sans-serif
+}
+.bodyfont {
+	FONT-SIZE: 8.5pt; COLOR: #000000; FONT-FAMILY: Arial,Helvetica,sans-serif
+}
+.buddyfont {
+	FONT-SIZE: 9pt; COLOR: #000000; FONT-FAMILY: Arial,Helvetica,sans-serif
+}
+.title {
+	FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: #000080; FONT-FAMILY: verdana,Helvetica,sans-serif
+}
+.maintitle {
+	FONT-WEIGHT: bold; FONT-SIZE: 10pt; COLOR: #646668; FONT-FAMILY: arial,Helvetica,sans-serif
+}
+.disclaimer {
+	FONT-SIZE: 7.5pt; COLOR: gray; FONT-FAMILY: Arial,Helvetica,sans-serif
+}
+.date {
+	FONT-WEIGHT: bold; FONT-SIZE: 7.5pt; MARGIN-LEFT: 200px; COLOR: navy; FONT-FAMILY: verdana,Arial,Helvetica,sans-serif; POSITION: absolute; TOP: 102px
+}
+.switchmode {
+	FONT-SIZE: 6pt; MARGIN-LEFT: 780px; COLOR: navy; FONT-FAMILY: verdana,Arial,Helvetica,sans-serif; POSITION: absolute; TOP: 30px
+}
+A:link {
+	COLOR: #000080; TEXT-DECORATION: none
+}
+A:visited {
+	COLOR: #000080; TEXT-DECORATION: none
+}
+A:active {
+	COLOR: #000080; TEXT-DECORATION: none
+}
+A:hover {
+	TEXT-DECORATION: underline
+}
+.FormText {
+	FONT-SIZE: 8pt; FONT-FAMILY: Arial,verdana,Helvetica,sans-serif
+}
+.FormHeader {
+	FONT-WEIGHT: bold; FONT-SIZE: 10pt; FONT-FAMILY: Arial,Helvetica,sans-serif
+}
+.FormObject {
+	FONT-SIZE: 8pt; FONT-FAMILY: Arial,verdana,Helvetica,sans-serif
+}
+.FormSubHeader {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; FONT-FAMILY: Arial,Helvetica,sans-serif
+}
+.SearchChannel {
+	FONT-SIZE: 8pt; COLOR: navy; FONT-FAMILY: Arial,Helvetica,sans-serif
+}
+.FormRequiredStatement {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; FONT-FAMILY: Arial,Helvetica,sans-serif
+}
+.FormRequiredSign {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: red; FONT-FAMILY: Arial,Helvetica,sans-serif
+}
+.CCareReply {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: navy; FONT-FAMILY: Arial,Helvetica,sans-serif
+}
+.CorporateTable {
+	BORDER-RIGHT: #ffffff 0px solid; BORDER-TOP: #ffffff 0px solid; BORDER-LEFT: #ffffff 0px solid; BORDER-BOTTOM: #ffffff 0px solid
+}
+.GoldTable {
+	BORDER-RIGHT: #ffffff 0px solid; BORDER-TOP: #ffffff 0px solid; BORDER-LEFT: #ffffff 0px solid; BORDER-BOTTOM: #ffffff 0px solid
+}
+.AcesTable {
+	BORDER-RIGHT: #ffffff 0px solid; BORDER-TOP: #ffffff 0px solid; BORDER-LEFT: #ffffff 0px solid; BORDER-BOTTOM: #ffffff 0px solid
+}
+.BuddyTable {
+	BORDER-RIGHT: #ffffff 0px solid; BORDER-TOP: #ffffff 0px solid; BORDER-LEFT: #ffffff 0px solid; BORDER-BOTTOM: #ffffff 0px solid
+}
+.MoneyTable {
+	BORDER-RIGHT: #ffffff 0px solid; BORDER-TOP: #ffffff 0px solid; BORDER-LEFT: #ffffff 0px solid; BORDER-BOTTOM: #ffffff 0px solid
+}
+.CorporateColor {
+	LINE-HEIGHT: 30px
+}
+.GoldColor {
+	LINE-HEIGHT: 30px
+}
+.AcesColor {
+	LINE-HEIGHT: 30px
+}
+.BuddyColor {
+	LINE-HEIGHT: 30px
+}
+.MoneyColor {
+	LINE-HEIGHT: 30px
+}
+.TabHeadText {
+	FONT-WEIGHT: bold; FONT-SIZE: 9pt; MARGIN-LEFT: 0px; COLOR: #000000; FONT-FAMILY: Verdana,Arial, Sans-serif
+}
+.CorporateTableColor {
+	LINE-HEIGHT: 13px; BACKGROUND-COLOR: #ffffff
+}
+.CorporateText {
+	FONT-WEIGHT: bold; FONT-SIZE: 10pt; MARGIN-LEFT: 1px; COLOR: #adc6d6; FONT-FAMILY: Verdana,Arial, Sans-serif
+}
+.CorporateHeadText {
+	FONT-WEIGHT: bold; FONT-SIZE: 8pt; COLOR: #ffffff; FONT-FAMILY: Arial,Helvetica,sans-serif
+}

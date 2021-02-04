@@ -1,0 +1,25 @@
+          LOPUES EAST CENTER          
+       Villamonte, Bacolod City       
+RunDate:12/20/2008 12:00pm     00000407
+Term/Serial No.       26/EPSONA4LG017517
+Cashier:ALBERT SANTIL SN:6705000004071  
+----------------------------------------
+Name    :JEREZA GUADALUPE B            
+Card    :08 000000647                  
+
+PROJECT GK                     5/Cpn                                 
+Transaction 12/20/2008        
+#Coupons:20                            
+#From   :00002145                      
+#To     :00002164                      
+
+Points Converted  :100     
+Points Balance    :233.42  
+----------------------------------------
+
+
+
+
+
+
+

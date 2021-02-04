@@ -1,0 +1,656 @@
+<?
+        $o = mysql_connect("localhost","root","") or die("Can't connect to server...");
+                mysql_select_db("hms") or die("'Common' Database is unavailable...");
+
+function adjustSize($s, $size)
+{
+	if (strlen($s) > $size)
+	{
+		$s = substr($s,0,$size);
+	}
+	else
+	{
+		$s = str_pad($s,$size);
+	}
+	
+	return $s;
+}
+function center($s,$size)
+{
+	$s = str_pad($s,$size," ",STR_PAD_BOTH);
+	return $s;
+}
+
+function adjustRight($s,$size)
+{
+	$s = str_pad($s,$size," ",STR_PAD_LEFT);
+	return $s;
+}
+
+function doPrint($details)
+{
+		$serverPort	= $_SERVER['REMOTE_ADDR'];	
+		$fp = fsockopen("udp://$serverPort", 5003, $errno, $errstr, 10) or die("Can't connect");
+		
+		 if (!$fp) {
+		     echo "$errstr ($errno)<br>\n";
+		 }
+		 else
+		 {	
+			fputs($fp,$details);
+			fputs($fp,"eof");
+	        fclose ($fp);
+		}
+}
+
+function udate($ymd)
+{
+	$mdy = ymd2mdy($ymd);
+	$ud  = substr($mdy,0,6).substr($mdy,8,10);
+	return $ud;
+}
+
+function ymd2mdy($ymd)
+{
+	$a = explode("-",$ymd);
+	return "$a[1]/$a[2]/$a[0]";
+}
+
+function mdy2ymd($mdy)
+{
+	$a = explode("/",$mdy);
+	return "$a[2]-$a[0]-$a[1]";
+}
+
+
+function redirect($amessage)
+{
+  echo  "<SCRIPT language=JavaScript>
+    <!-- Begin
+     window.location.href = \"?$amessage\";
+    // End -->
+    </SCRIPT>";
+  exit();
+}
+
+function exitMessage($message)
+{
+?>
+ <div align="center"><font color="#FF0000" face="Geneva, Arial, Helvetica, san-serif"><?=$message;?>
+  </font> </div>
+ <?
+ exit();
+}
+
+function message($message)
+{
+?>
+ <div align="center"><font color="#FF0000" face="Geneva, Arial, Helvetica, san-serif"><?=$message;?>
+  </font> </div>
+ <?
+}
+
+
+function chkRights($rights)
+{
+ global $admin;
+ $rights = strtoupper($rights);
+ return (strpos(strtoupper($admin->rights),$rights) !== false);
+}
+
+function chkMenuRights($rights)
+{
+ global $admin;
+ $rights = strtoupper($rights);
+ return (strpos(strtoupper($admin->menu),$rights) !== false);
+}
+
+function chkRights2($module,$rights, $adminId)
+{
+	global $adminrights, $admin;
+	$rstr=false;
+	$validate_string=" ";
+	if ($admin->username=='root' and $admin->adminId == $adminId)
+		return true;
+			
+	if ($rights=="madd") $validate_string=md5("Y".$adminId."100".$module);
+	elseif ($rights=="medit") $validate_string=md5("Y".$adminId."250".$module);
+	elseif ($rights=="mdelete") $validate_string=md5("Y".$adminId."400".$module);
+	elseif ($rights=="mview") $validate_string=md5("Y".$adminId."550".$module);
+	foreach ($adminrights as $rg) 
+	{
+	 	if ($rg[$rights]==$validate_string && $rg["module"]==$module) 
+		{
+			$rstr=true;
+		}
+	}
+	return $rstr;
+}
+
+
+ function swapifnull($this,$that)
+ {
+     if ($this == null)
+     {
+          $this = $that;
+     }
+     else
+     {
+          $that = $this;
+     }
+ }
+
+ function textField($name,$size,$default,$password)
+ {
+  if ($password == null)
+ {
+   echo "<input name='$name' size='$size' value='$default'>";
+ }
+ else
+ {
+  echo "<input type=password name='$name' size='$size' value='$default'>";
+ }
+ }
+
+ function textArea($name,$rows, $cols, $default)
+ {
+  echo "<textarea name='$name' rows='$rows' cols='$cols'>$default</textarea>";
+ }
+
+
+ function lookUpMonth($name,$value, $notreadOnly=true)
+ {
+ 	
+  $arr = array("Select"=>"0","January"=>"1","February"=>"2","March"=>"3",
+  		"April"=>"4","May"=>"5","June"=>"6","July"=>"7",
+		"August"=>"8","September"=>"9","October"=>"10",
+		"November"=>"11","December"=>"12");
+ 		
+  $str = "\n\t<select name=\"$name\" style=\"border:1px solid black\">";
+  $ctr = count($arr);
+  while (list ($key, $val) = each ($arr))
+  //echo "$key => $val<br>";
+  //for($i = 0; $i < $ctr; $i++)
+  {
+   if ($val == $value)
+   {
+    $str .= "\n\t\t<option value=\"$val\" selected>$key</option>";
+   }
+   else
+   {
+    $str .= "\n\t\t<option value=\"$val\">$key</option>";
+   }
+  }
+  $str .= "\n\t</select>";
+  return $str;
+}
+
+
+ function lookUpTable($name,$table,$keyfield,$valuefield,$value,$notreadOnly = true)
+ {
+  global $o;
+  $str = "\n\t<select name=\"$name\" style=\"border:1px solid black\" ";
+  if (!$notreadOnly)  $str .= " disabled";
+  $str .= ">";
+  $q = "select * from $table order by $valuefield";
+  $qR = mysql_query($q,$o);
+  if (mysql_num_rows($qR) == 0)
+  {
+  	return "No record for table $table...";
+  }
+  while ($row = mysql_fetch_assoc($qR))
+  {
+   if ($row[$keyfield] == $value)
+   {
+    $str .= "\n\t\t<option value=\"$row[$keyfield]\" selected>$row[$valuefield][$row[$keyfield]]</option>";
+   }
+   else
+   {
+    $str .= "\n\t\t<option value=\"$row[$keyfield]\">$row[$valuefield][$row[$keyfield]]</option>";
+   }
+  }
+  $str .= "\n\t</select>";
+  return $str;
+ }
+
+ function lookUpRoomVacant($name,$table,$keyfield,$valuefield,$value,$notreadOnly = true)
+ {
+  global $o;
+  $str = "\n\t<select name=\"$name\" style=\"border:1px solid black\" ";
+  if (!$notreadOnly)  $str .= " disabled";
+  $str .= ">";
+  $q = "select * from $table where (isnull(rstatus) || rstatus='Vacant') and enable!='D' order by $valuefield";
+  $qR = mysql_query($q,$o);
+  if (mysql_num_rows($qR) == 0)
+  {
+  	return "No record for table $table...";
+  }
+  while ($row = mysql_fetch_assoc($qR))
+  {
+   if ($row[$keyfield] == $value)
+   {
+    $str .= "\n\t\t<option value=\"$row[$keyfield]\" selected>$row[$valuefield][$row[$keyfield]]</option>";
+   }
+   else
+   {
+    $str .= "\n\t\t<option value=\"$row[$keyfield]\">$row[$valuefield]</option>";
+   }
+  }
+  $str .= "\n\t</select>";
+  return $str;
+ }
+
+ function lookUpCache($name,$table,$keyfield,$valuefield,$value,$cachetype,$notreadOnly = true)
+ {
+  global $o;
+  $str = "\n\t<select name=\"$name\" style=\"border:1px solid black\" ";
+  if (!$notreadOnly)  $str .= " disabled";
+  $str .= ">";
+  //echo "type".$cachetype;
+  $q = "select * from $table where cachetype='$cachetype' order by $valuefield" ;
+  $qR = mysql_query($q,$o) or die(mysql_error());
+  if (mysql_num_rows($qR) == 0)
+  {
+  	return "No record for table $table...";
+  }
+  //added to display select item
+  $str .= "\n\t\t<option value=\"\">-- Select $name</option>";
+  while ($row = mysql_fetch_assoc($qR))
+  {
+   if ($row[$keyfield] == $value)
+   {
+    $str .= "\n\t\t<option value=\"$row[$keyfield]\" selected>$row[$valuefield]</option>";
+   }
+   else
+   {
+    $str .= "\n\t\t<option value=\"$row[$keyfield]\">$row[$valuefield]</option>";
+   }
+  }
+  $str .= "\n\t</select>";
+  return $str;
+ }
+
+ function lookUpAccount($name,$table,$keyfield,$valuefield,$value,$classification,$notreadOnly = true)
+ {
+  global $o;
+  $str = "\n\t<select name=\"$name\" style=\"border:1px solid black\" ";
+  if (!$notreadOnly)  $str .= " disabled";
+  $str .= ">";
+  //echo "type".$cachetype;
+  $q = "select accounts_id,left(account,25) as account from $table where classification='$classification' order by $valuefield" ;
+  $qR = mysql_query($q,$o) or die(mysql_error());
+  if (mysql_num_rows($qR) == 0)
+  {
+  	return "No record for table $table...";
+  }
+  //added to display select item
+  $str .= "\n\t\t<option value=\"\">-- Select $name</option>";
+  while ($row = mysql_fetch_assoc($qR))
+  {
+   if ($row[$keyfield] == $value)
+   {
+    $str .= "\n\t\t<option value=\"$row[$keyfield]\" selected>$row[$valuefield]</option>";
+   }
+   else
+   {
+    $str .= "\n\t\t<option value=\"$row[$keyfield]\">$row[$valuefield]</option>";
+   }
+  }
+  $str .= "\n\t</select>";
+  return $str;
+ }
+
+ function lookUpPaymast($name,$table,$keyfield,$valuefield,$value,$notreadOnly = true)
+ {
+  global $o;
+  $str = "\n\t<select name=\"$name\" style=\"border:1px solid black\" ";
+  if (!$notreadOnly)  $str .= " disabled";
+  $str .= ">";
+  //echo "type".$cachetype;
+  $q = "select left(CONCAT_WS(',',elast,efirst),25) as elast, ecode, paymast_id 
+  			from 
+				$table
+			where enable!='D'	 
+			order by 
+				$valuefield" ;
+  $qR = mysql_query($q,$o) or die(mysql_error());
+  if (mysql_num_rows($qR) == 0)
+  {
+  	return "No record for table $table...";
+  }
+  //added to display select item
+  $str .= "\n\t\t<option value=\"\">-- Select $name</option>";
+  while ($row = mysql_fetch_assoc($qR))
+  {
+   if ($row[$keyfield] == $value)
+   {
+    $str .= "\n\t\t<option value=\"trim($row[$keyfield])\" selected>$row[$valuefield]</option>";
+   }
+   else
+   {
+    $str .= "\n\t\t<option value=\"$row[$keyfield]\">$row[$valuefield]</option>";
+   }
+  }
+  $str .= "\n\t</select>";
+  return $str;
+ }
+ 
+  function lookUpTable2($name,$table,$keyfield,$valuefield,$value,$notreadOnly = true)
+ {
+  global $o;
+  $str = "\n\t<select name=\"$name\" style=\"border:1px solid black\" ";
+  if (!$notreadOnly)  $str .= " disabled";
+  $str .= ">";
+  $q = "select * from $table order by $valuefield";
+  $qR = mysql_query($q,$o);
+  if (mysql_num_rows($qR) == 0)
+  {
+  	return "No record for table $table...";
+  }
+  //added to display select item
+  $str .= "\n\t\t<option value=\"\">-- Select $table</option>";
+  while ($row = mysql_fetch_assoc($qR))
+  {
+   if ($row[$keyfield] == $value)
+   {
+    $str .= "\n\t\t<option value=\"$row[$keyfield]\" selected>$row[$valuefield]</option>";
+   }
+   else
+   {
+    $str .= "\n\t\t<option value=\"$row[$keyfield]\">$row[$valuefield]</option>";
+   }
+  }
+  $str .= "\n\t</select>";
+  return $str;
+ }
+
+ function lookUpTableFilter($name,$table,$keyfield,$valuefield,$value,$filterfield,$filter,$notreadOnly = true)
+ {
+  global $o;
+  $str = "\n\t<select name=\"$name\" style=\"border:1px solid black\" ";
+  if (!$notreadOnly)  $str .= " disabled";
+  $str .= ">";
+  $q = "select * from $table where $filterfield='$filter' order by $valuefield ";
+  $qR = mysql_query($q,$o) or die (mysql_error());
+  if (mysql_num_rows($qR) == 0)
+  {
+  	return "No record for table $table...";
+  }
+  //added to display select item
+  $str .= "\n\t\t<option value=\"Select\">-- Select $table</option>";
+  while ($row = mysql_fetch_assoc($qR))
+  {
+   if ($row[$keyfield] == $value)
+   {
+    $str .= "\n\t\t<option value=\"$row[$keyfield]\" selected>$row[$valuefield][$row[$keyfield]]</option>";
+   }
+   else
+   {
+    $str .= "\n\t\t<option value=\"$row[$keyfield]\">$row[$valuefield][$row[$keyfield]]</option>";
+   }
+  }
+  $str .= "\n\t</select>";
+  return $str;
+ }
+
+ function getFieldSize($table,$field)
+ {
+ 	$q = "select * from $table";
+	$qr = mysql_query($q) or die(mysql_error());
+	
+	$num_fields = mysql_num_fields($qr) or die(mysql_error()); 	
+	
+	for ($i = 0; $i < $num_fields; $i++)
+	{
+			$fieldName = mysql_field_name($qr,$i);
+			$fieldType = mysql_field_type($qr,$i);
+			$fieldLen = mysql_field_len($qr,$i);
+			
+			if ($fieldName == $field)
+			{
+				return $fieldLen;
+			}
+	}		
+	echo "\nField $field is not found in table $table...\n";
+	return 0;
+ }
+function request($var)
+{
+	global $theModule;
+
+	if (($ret = $_GET[$var]) != "")
+	{
+		return $ret;
+	}
+	elseif (($ret = $_POST[$var]) != "")
+	{
+		return $ret;
+	}
+	elseif (($ret = $_SESSION[$var]) != "")
+	{
+		return $ret;
+	}
+	elseif (($ret = $_SESSION[$theModule][$var]) != "")
+	{
+		return $ret;
+	}	
+	else
+	{
+		return NULL;
+	}
+
+}
+
+function lookUpTableReturn($name,$table,$keyfield,$valuefield,$value)
+ {
+  global $o;
+  $str = "\n\t<select name=\"$name\" style=\"border:1px solid black\" >";
+  $q = "select * from $table where $keyfield = '$value'";
+  $qR = mysql_query($q,$o);
+  if (mysql_num_rows($qR) == 0)
+  {
+  	return "No Record";
+  }
+  else
+  {
+  	$r = mysql_fetch_assoc($qR);
+  	return $r[$valuefield]."[$value]";
+  }
+ }
+
+function lookUpTableReturnValue($name,$table,$keyfield,$valuefield,$value)
+ {
+  global $o;
+  $str = "\n\t<select name=\"$name\" style=\"border:1px solid black\" >";
+  $q = "select * from $table where $keyfield = '$value'";
+  $qR = mysql_query($q,$o);
+  if (mysql_num_rows($qR) == 0)
+  {
+  	return "No Record";
+  }
+  else
+  {
+  	$r = mysql_fetch_assoc($qR);
+  	return $r[$valuefield];
+  }
+ }
+
+function lookUpTableReturnValue2($name,$table,$keyfield,$valuefield,$value)
+ {
+  global $o;
+  $str = "\n\t<select name=\"$name\" style=\"border:1px solid black\" >";
+  $q = "select * from $table where $keyfield = '$value'";
+  $qR = mysql_query($q,$o);
+  if (mysql_num_rows($qR) == 0)
+  {
+  	return " ";
+  }
+  else
+  {
+  	$r = mysql_fetch_assoc($qR);
+  	return $r[$valuefield];
+  }
+ }
+
+ function lookUpArray($name,$arr,$value,$notreadOnly=true)
+ {
+  $str = "\n\t<select name=\"$name\" style=\"border:1px solid black\"";
+  
+  if (!$notreadOnly) $str .= " disabled";
+  
+  $str .= ">";
+  $ctr = count($arr);
+  for($i = 0; $i < $ctr; $i++)
+  {
+   if ($arr[$i] == $value)
+   {
+    $str .= "\n\t\t<option value=\"$arr[$i]\" selected>$arr[$i]</option>";
+   }
+   else
+   {
+    $str .= "\n\t\t<option value=\"$arr[$i]\">$arr[$i]</option>";
+   }
+  }
+  $str .= "\n\t</select>";
+  return $str;
+ }
+
+ function lookUpAssoc($name,$arr,$value)
+ {
+  $str = "\n\t<select name=\"$name\" style=\"border:1px solid black\">";
+  $ctr = count($arr);
+  while (list ($key, $val) = each ($arr))
+  //echo "$key => $val<br>";
+  //for($i = 0; $i < $ctr; $i++)
+  {
+   if ($val == $value)
+   {
+    $str .= "\n\t\t<option value=\"$val\" selected>$key</option>";
+   }
+   else
+   {
+    $str .= "\n\t\t<option value=\"$val\">$key</option>";
+   }
+  }
+  $str .= "\n\t</select>";
+  return $str;
+ }
+
+ function tableToArray($table, $field)
+ {
+  global $o;
+  $q = "select * from $table order by $field";
+  $qR = mysql_query($q,$o);
+  $arr = array();
+  while ($r = mysql_fetch_assoc($qR))
+  {
+   $arr[] = $r[$field];
+  }
+  return $arr;
+ }
+
+ function lookUpDoctor($name,$table,$keyfield,$valuefield,$value,$register_id,$notreadOnly = true)
+ {
+  global $o;
+  $str = "\n\t<select name=\"$name\" style=\"border:1px solid black\" ";
+  if (!$notreadOnly)  $str .= " disabled";
+  $str .= ">";
+  $q = "select register_id, doc_no_id, doc_name  
+  		from 
+			register,doctors 
+		where 
+			register_id=$register_id and
+ 	  		(doctors.doc_no_id=register.doc1 or 
+			doctors.doc_no_id=register.doc2 or 
+			doctors.doc_no_id=register.doc3 or 
+			octors.doc_no_id=register.doc4)";
+  $qR = mysql_query($q,$o);
+  if (mysql_num_rows($qR) == 0)
+  {
+  	return "No record for table $table...";
+  }
+  while ($row = mysql_fetch_assoc($qR))
+  {
+   if ($row[$keyfield] == $value)
+   {
+    $str .= "\n\t\t<option value=\"$row[$keyfield]\" selected>$row[$valuefield]</option>";
+   }
+   else
+   {
+    $str .= "\n\t\t<option value=\"$row[$keyfield]\">$row[$valuefield]</option>";
+   }
+  }
+  $str .= "\n\t</select>";
+  return $str;
+ }
+
+  function lookUpAllDoc($name,$table,$keyfield,$valuefield,$value,$notreadOnly = true)
+ {
+  global $o;
+  $str = "\n\t<select name=\"$name\" style=\"border:1px solid black\" ";
+  if (!$notreadOnly)  $str .= " disabled";
+  $str .= ">";
+  $q = "select doc_no_id,left(doc_name,25) as doc_name 
+  		from 
+			$table 
+		where 
+			enable!='D'	
+		order by 
+			$valuefield";
+  $qR = mysql_query($q,$o);
+  if (mysql_num_rows($qR) == 0)
+  {
+  	return "No record for table $table...";
+  }
+  //added to display select item
+  $str .= "\n\t\t<option value=\"\">-- Select $table</option>";
+  while ($row = mysql_fetch_assoc($qR))
+  {
+   if ($row[$keyfield] == $value)
+   {
+    $str .= "\n\t\t<option value=\"$row[$keyfield]\" selected>$row[$valuefield][$row[$keyfield]]</option>";
+   }
+   else
+   {
+    $str .= "\n\t\t<option value=\"$row[$keyfield]\">$row[$valuefield]</option>";
+   }
+  }
+  $str .= "\n\t</select>";
+  return $str;
+ }
+
+?>
+<script language=javascript>
+<!--
+ function NavRollOver(oTd) {if (!oTd.contains(event.fromElement)) {oTd.bgColor="#99CCDD";}}
+ function NavRollOut(oTd) {if (!oTd.contains(event.toElement)) {oTd.bgColor="#99AABB";}}
+ function MenRollOver(oTd) {if (!oTd.contains(event.fromElement)) {oTd.bgColor="#FFFFFF";}}
+ function MenRollOut(oTd) {if (!oTd.contains(event.toElement)) {oTd.bgColor="#F2F7FF";}}
+
+ function beforeSubmit(mForm,mString)
+ {
+     mForm.action = mString;
+     return true;
+ }
+ // -->
+</script>
+<script language="javascript" src="../js/setdatetime.js"></script>
+<script language="javascript" src="../js/checkdate.js" type="text/javascript"></script>
+<script language="javascript" src="../js/animate.js" type="text/javascript"></script>
+<script language="javascript" src="../js/popcalendar.js" type="text/javascript"></script>
+<SCRIPT language=JavaScript src="../js/CommonClient.js" type=text/javascript></SCRIPT>
+<SCRIPT language=JavaScript src="../js/OptionsClient.js" type=text/javascript></SCRIPT>
+	<STYLE TYPE="text/css">
+
+	A:link  {text-decoration: none; color: #000066;}
+	A:hover {text-decoration:;font-weight: bold; color: #cc0033;}
+	A:active {text-decoration: none; color: #cc0000;}
+	A:visited {text-decoration: none; color: #000066;}
+	A:visited:active {text-decoration: none; color: #cc0000;}
+	A:visited:hover {text-decoration: underline; color: #cc0033;}
+	div.cats{
+					position: absolute;
+					right: 10;
+					top: 80;
+				}	
+	</style>

@@ -1,0 +1,51 @@
+ 
+ counter 281. Loading the new data into strData is simply done by calling GetData. No problems here, I hope.
+                So far, everything looks fine and should work. We'll only add some code for the event of a
+                suddenly closed socket (e.g. when the client exits).What are we doing here exactly? At first,
+                we check the server's State. Only if the socket is listening (sckListening) we call Accept
+                and the connection is established. Remember to pass requestID to this procedure. 
+ counter 282. Loading the new data into strData is simply done by calling GetData. No problems here, I hope.
+                So far, everything looks fine and should work. We'll only add some code for the event of a
+                suddenly closed socket (e.g. when the client exits).What are we doing here exactly? At first,
+                we check the server's State. Only if the socket is listening (sckListening) we call Accept
+                and the connection is established. Remember to pass requestID to this procedure. 
+ counter 283. Loading the new data into strData is simply done by calling GetData. No problems here, I hope.
+                So far, everything looks fine and should work. We'll only add some code for the event of a
+                suddenly closed socket (e.g. when the client exits).What are we doing here exactly? At first,
+                we check the server's State. Only if the socket is listening (sckListening) we call Accept
+                and the connection is established. Remember to pass requestID to this procedure. 
+ counter 284. Loading the new data into strData is simply done by calling GetData. No problems here, I hope.
+                So far, everything looks fine and should work. We'll only add some code for the event of a
+                suddenly closed socket (e.g. when the client exits).What are we doing here exactly? At first,
+                we check the server's State. Only if the socket is listening (sckListening) we call Accept
+                and the connection is established. Remember to pass requestID to this procedure. 
+ counter 285. Loading the new data into strData is simply done by calling GetData. No problems here, I hope.
+                So far, everything looks fine and should work. We'll only add some code for the event of a
+                suddenly closed socket (e.g. when the client exits).What are we doing here exactly? At first,
+                we check the server's State. Only if the socket is listening (sckListening) we call Accept
+                and the connection is established. Remember to pass requestID to this procedure. 
+ counter 286. Loading the new data into strData is simply done by calling GetData. No problems here, I hope.
+                So far, everything looks fine and should work. We'll only add some code for the event of a
+                suddenly closed socket (e.g. when the client exits).What are we doing here exactly? At first,
+                we check the server's State. Only if the socket is listening (sckListening) we call Accept
+                and the connection is established. Remember to pass requestID to this procedure. 
+ counter 287. Loading the new data into strData is simply done by calling GetData. No problems here, I hope.
+                So far, everything looks fine and should work. We'll only add some code for the event of a
+                suddenly closed socket (e.g. when the client exits).What are we doing here exactly? At first,
+                we check the server's State. Only if the socket is listening (sckListening) we call Accept
+                and the connection is established. Remember to pass requestID to this procedure. 
+ counter 288. Loading the new data into strData is simply done by calling GetData. No problems here, I hope.
+                So far, everything looks fine and should work. We'll only add some code for the event of a
+                suddenly closed socket (e.g. when the client exits).What are we doing here exactly? At first,
+                we check the server's State. Only if the socket is listening (sckListening) we call Accept
+                and the connection is established. Remember to pass requestID to this procedure. 
+ counter 289. Loading the new data into strData is simply done by calling GetData. No problems here, I hope.
+                So far, everything looks fine and should work. We'll only add some code for the event of a
+                suddenly closed socket (e.g. when the client exits).What are we doing here exactly? At first,
+                we check the server's State. Only if the socket is listening (sckListening) we call Accept
+                and the connection is established. Remember to pass requestID to this procedure. 
+ counter 290. Loading the new data into strData is simply done by calling GetData. No problems here, I hope.
+                So far, everything looks fine and should work. We'll only add some code for the event of a
+                suddenly closed socket (e.g. when the client exits).What are we doing here exactly? At first,
+                we check the server's State. Only if the socket is listening (sckListening) we call Accept
+                and the connection is established. Remember to pass requestID to this procedure.

@@ -1,0 +1,119 @@
+
+  <?
+  	if (!session_is_registered('aAcctBrowse'))
+	{
+		session_register('aAcctBrowse');
+		$aAcctBrowse = null;
+		$aAcctBrowse = array();
+	}
+	if (!in_array($p1, array('Next','Previous','Sort')))
+	{
+		$aAcctBrowse['search'] = $_REQUEST['search'];
+		$aAcctBrowse['searchby'] = $_REQUEST['searchby'];
+	}   
+
+  	$q = "select * from account, account_type  
+            where 
+              account.account_type_id=account_type.account_type_id and 
+              account_type.account_type_code='S'";
+	
+	if ($aAcctBrowse['searchby'] == '') $aAcctBrowse['searchby'] = 'account';
+	if ($aAcctBrowse['search'] != '')
+	{
+		$q .= " and $searchby ilike '%".$aAcctBrowse['search']."%' ";
+	}
+	$q .= " order by account ";
+	
+	if ($p1 == 'Go' or $p1 == '')
+	{
+		$aAcctBrowse['start'] = 0;
+	}
+	elseif ($p1 == 'Next')
+	{
+		$aAcctBrowse['start'] += 15;
+	}
+	elseif ($p1 == 'Previous')
+	{
+		$aAcctBrowse['start'] -= 15;
+	}
+	if ($aAcctBrowse['start']<=0) $aAcctBrowse['start']=0;
+	
+	$q .= " offset '".$aAcctBrowse['start']."' limit 15 ";
+
+	$qr = @pg_query($q) or message("Error querying account data...".pg_errormessage().$q);
+
+	if (pg_num_rows($qr) == 0 && $p1!= '') message("account data [NOT] found...");
+?>
+<form name="form1" method="post" action="" style="margin:0">
+  <table width="85%" border="0" align="center" cellpadding="2" cellspacing="1">
+    <tr> 
+      <td>Search 
+        <input name="search" type="text" id="search" value="<?= $search;?>">
+	<?= lookUpAssoc('searchby',array('Account Name'=>'account','Account Code'=>'account_code'),$aAcctBrowse['searchby']);?>
+        <input name="p1" type="submit" id="p1" value="Go" accesskey="G">
+        <input type="button" name="Submit2" value="Add New" onClick="window.location='?p=account.supplier&p1=New'" accesskey="A">
+        <input type="button" name="Submit222" value="Browse" onClick="window.location='?p=account.supplier.browse&act=All'" accesskey="B">
+        <hr color="#CC0000"></td>
+    </tr>
+  </table>
+</form>
+<table width="70%" border="0" align="center" cellpadding="2" cellspacing="1" bgcolor="#EFEFEF">
+  <tr bgcolor="#CCCCCC"> 
+    <td height="20" colspan="5"  background="../graphics/table0_horizontal.PNG"><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+      <img src="../graphics/team_wksp.gif" width="16" height="17"> Browse Supplier 
+      Account Information</strong></font></td>
+  </tr>
+<?
+	$ctr=0;
+	while ($r = pg_fetch_object($qr))
+	{
+		$ctr++;
+		if (!in_array($r->account_type,array('S','N','Y')))
+		{
+			$href = "?p=account.supplier&p1=Load&id=$r->account_id";
+		}
+		else
+		{
+			$href = "?p=account.supplier&p1=Load&id=$r->account_id";
+		}	
+  ?>
+
+  <tr> 
+    <td><strong><font size="2" face="Verdana, Arial, Helvetica, sans-serif">#</font></strong></td>
+    <td><strong><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Account 
+      Name</font></strong></td>
+    <td><strong><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Account#</font></strong></td>
+    <td><strong><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Type</font></strong></td>
+    <td><strong><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Enable</font></strong></td>
+  </tr>  <tr onMouseOver="bgColor='#FFFFDD'" onMouseOut="bgColor='#FFFFFF'" bgcolor="#FFFFFF"> 
+    <td width="6%" align="right"><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
+      <?= $ctr;?>
+      .</font></td>
+    <td width="46%""><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
+      <a href="<?=$href;?>"> 
+      <?= $r->account;?>
+      </a> </font></td>
+    <td width="16%""><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><a href="<?=$href;?>">
+      <?= $r->account_code;?>
+      </a></font></td>
+    <td width="18%""><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
+      <?= lookUpTableReturnValue('x','account_type','account_type_id','account_type',$r->account_type_id);?>
+      </font></td>
+    <td width="14%"><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
+      <?=($r->enable=='Y' ? 'Enabled' : 'Disabled' );?>
+      </font></td>
+  </tr>
+  <?
+  }
+  ?>
+  <tr> 
+    <td colspan="5" bgcolor="#FFFFFF"><input type="button" name="Submit22" value="Add New" onClick="window.location='?p=account.supplier&p1=New'"> 
+      <input type="button" name="Submit232" value="Close" onClick="window.location='?p='"></td>
+  </tr>
+</table>
+
+<div align="center"> <a href="?p=account.supplier.browse&p1=Previous&start=<?=$start;?>&search=<?=$search;?>&searchby=<?=$searchby;?>"><img src="../graphics/redarrow_left.gif" width="4" height="7" border="0"></a> 
+  <a href="?p=account.supplier.browse&p1=Previous&start=<?=$start;?>&search=<?=$search;?>&searchby=<?=$searchby;?>"> 
+  Previous</a> | <a href="?p=account.supplier.browse&p1=Next&start=<?=$start;?>&search=<?=$search;?>&searchby=<?=$searchby;?>">Next</a> 
+  <a href="?p=account.supplier.browse&p1=Next&start=<?=$start;?>&search=<?=$search;?>&searchby=<?=$searchby;?>"><img src="../graphics/redarrow_right.gif" width="4" height="7" border="0"></a> 
+</div>

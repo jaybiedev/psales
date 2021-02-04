@@ -1,0 +1,116 @@
+<br><form name="form1" method="post" action="">
+  <table width="85%" border="0" align="center" cellpadding="2" cellspacing="1">
+    <tr> 
+      <td>Search 
+        <input name="search" type="text" id="search" value="<?= $search;?>">
+        <?= lookUpAssoc('searchby',array('Employee Lname'=>'elast','Idnum'=>'idnum','Record Id'=>'paymast_id','Position'=>'position'), $searchby);?>
+        <?= lookUpAssoc('show',array('Show Enabled Only'=>'E','Show Disabled'=>'D','Show All'=>'A'), $show);?>
+        <input name="p1" type="submit" id="p1" value="Go">
+        <input type="button" name="Submit2" value="Add New" onClick="window.location='?p=paymast&p1=New'">
+        <input type="button" name="Submit23" value="Close" onClick="window.location='?p='">
+        <hr color="#CC0000"></td>
+    </tr>
+  </table>
+<table width="85%" border="0" align="center" cellpadding="2" cellspacing="1" bgcolor="#EFEFEF">
+  <tr bgcolor="#CCCCCC"> 
+      <td height="20" colspan="6"><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><strong> 
+        <img src="../graphics/storage.gif" width="16" height="17"> Browse Employee 
+        Roster </strong></font></td>
+  </tr>
+  <tr> 
+    <td align="center"><strong><font size="2" face="Geneva, Arial, Helvetica, san-serif">#</font></strong></td>
+      <td><strong><font size="2" face="Geneva, Arial, Helvetica, san-serif"><a href="?p=paymast.browse&p1=Go&sortby=stock&start=<?=$start;?>&search=<?=$search;?>&searchby=<?=$searchby;?>">Employee</a></font></strong></td>
+      <td><strong><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><a href="?p=paymast.browse&p1=Go&sortby=unit&start=<?=$start;?>&search=<?=$search;?>&searchby=<?=$searchby;?>">Branch</a></font></strong></td>
+      <td><strong><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><a href="?p=paymast.browse&p1=Go&sortby=unit&start=<?=$start;?>&search=<?=$search;?>&searchby=<?=$searchby;?>">Department</a></font></strong></td>
+      <td><strong><font size="2" face="Verdana, Arial, Helvetica, sans-serif"><a href="?p=paymast.browse&p1=Go&sortby=classification_id&start=<?=$start;?>&search=<?=$search;?>&searchby=<?=$searchby;?>">Position</a></font></strong></td>
+    <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">&nbsp;</font></td>
+  </tr>
+  <?
+  	$q = "select * from paymast  where 1=1";
+	if ($search != '')
+	{
+		$q .= " and $searchby ilike '%$search%' ";
+	}
+	if ($show == '' or $show=='E')
+	{
+		$q .= " and enable='Y'";
+	}
+	elseif ($show == 'D' )
+	{
+		$q .= " and enable='N'";
+	}
+	if ($sortby == '')
+		$q .= " order by lower(elast) ";
+	else
+		$q .= " order by lower($sortby)";
+			
+	if ($p1 == 'Go' or $p1 == '' or $p1 == 'Browse')
+	{
+		$start = 0;
+	}
+	elseif ($p1 == 'Next')
+	{
+		$start += 15;
+	}
+	elseif ($p1 == 'Previous')
+	{
+		$start -= 15;
+	}
+	if ($start<0) $start=0;
+	
+	$q .= " offset $start limit 15 ";
+
+	$qr = pg_query($q) or message("Error querying payroll master data...".pg_errormessage().$q);
+
+	if (pg_num_rows($qr) == 0 && $p1!= '') message("Payroll Master data [NOT] found...");
+	$ctr=0;
+	while ($r = pg_fetch_object($qr))
+	{
+		$ctr++;
+		if ($r->enable == 'Y')
+		{
+			$bgColor =  '#FFFFFF';
+		}
+		else
+		{
+			$bgColor =  '#FFCCCC';
+		}
+  ?>
+  <tr onMouseOver="bgColor='#FFFFDD'" onMouseOut="bgColor='<?=$bgColor;?>'" bgcolor="<?=$bgColor;?>"> 
+      <td width="4%" align="right" nowrap><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
+        <?= $ctr;?>
+        . </font></td>
+    <td width="29%""><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
+      <a href="?p=paymast&p1=Load&id=<?= $r->paymast_id;?>"> 
+      <?= $r->elast.', '.$r->efirst;?>
+      </a> </font></td>
+    <td width="13%""><font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+    <a href="?p=paymast&p1=Load&id=<?= $r->paymast_id;?>"> 
+      <?= lookUpTableReturnValue('x','branch','branch_id','branch',$r->branch_id);?>
+      </a></font></td>
+      <td width="13%""><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
+        <a href="?p=paymast&p1=Load&id=<?= $r->paymast_id;?>">
+        <?= lookUpTableReturnValue('x','department','department_id','department',$r->department_id);?>
+        </a> </font></td>
+    <td width="34%""> <font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
+      <?=$r->position;?>
+      </font></td>
+    <td width="7%"><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
+      <?=($r->enable=='Y' ? 'Enabled' : 'Disabled' );?>
+      </font></td>
+  </tr>
+  <?
+  }
+  ?>
+  <tr> 
+    <td colspan="6" bgcolor="#FFFFFF"><input type="button" name="Submit22" value="Add New" onClick="window.location='?p=paymast&p1=New'">
+      </td>
+  </tr>
+</table>
+</form>
+
+<div align="center"> <a href="?p=paymast.browse&p1=Previous&sortby=<?=$sortby;?>&start=<?=$start;?>&search=<?=$search;?>&searchby=<?=$searchby;?>"><img src="../graphics/redarrow_left.gif" width="4" height="7" border="0"></a> 
+  <a href="?p=paymast.browse&p1=Previous&sortby=<?=$sortby;?>&start=<?=$start;?>&search=<?=$search;?>&searchby=<?=$searchby;?>"> 
+  Previous</a> | <a href="?p=paymast.browse&p1=Next&sortby=<?=$sortby;?>&start=<?=$start;?>&search=<?=$search;?>&searchby=<?=$searchby;?>">Next</a> 
+  <a href="?p=paymast.browse&p1=Next&sortby=<?=$sortby;?>&start=<?=$start;?>&search=<?=$search;?>&searchby=<?=$searchby;?>"><img src="../graphics/redarrow_right.gif" width="4" height="7" border="0"></a> 
+</div>

@@ -1,0 +1,4 @@
+DBDOMAIN=localhost
+DBNAME=lecdb
+DBUSERNAME=pgsql
+DBTAGO=

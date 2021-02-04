@@ -1,0 +1,25 @@
+          LOPUES EAST CENTER          
+       Villamonte, Bacolod City       
+RunDate:10/17/2008 2:17pm      00000255
+Term/Serial No.       01/EPSONAEFK002255
+Cashier:ARLENE TINGSO SN:8032000002554  
+----------------------------------------
+Name    :PADERNAL LARRY E              
+Card    :08 000001928                  
+
+PROJECT GK                     5/Cpn                                 
+Transaction 10/17/2008        
+#Coupons:4                             
+#From   :00001624                      
+#To     :00001627                      
+
+Points Converted  :20      
+Points Balance    :279.46  
+----------------------------------------
+
+
+
+
+
+
+

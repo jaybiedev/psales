@@ -1,0 +1,168 @@
+<?
+$href = '?p=position';
+if (!session_is_registered('aposition'))
+{
+	session_register('aposition');
+	$aposition=array();
+}
+
+if ($p2=="Close")
+{
+	session_unregister('aposition');
+	echo "<script> window.location='index.php' </script>";
+}
+if ($p2=="Save Checked" && $aposition['status']=='INSERT')
+{
+	$c=0;
+//	print_r($position);
+//	echo "here ";exit;
+	while ($c < count($mark))
+	{
+		if ($position[$c]!='')
+		{
+			@pg_query("insert into position (enable, position)
+							values ('".$enable[$c]."','".$position[$c]."')"); 
+				or die (pg_errormessage());
+		}
+		$c++;
+	} 
+	$aposition['status']='SAVED';
+}
+elseif ($p2=="Save Checked" && $aposition['status']=='LIST')
+{
+	$c=0;
+
+	while ($c < count($mark))
+	{
+		$index = $mark[$c]-1;
+		if ($position[$index]!='')
+		{
+			pg_query("update position set 
+						enable='".$enable[$index]."',
+						position='".$position[$index]."'
+					where 
+						position_id='".$position_id[$index]."'") 
+					or die (pg_error());
+		}
+		$c++;
+	} 
+	$aposition['status']='SAVED';
+}
+?>
+<form name="form1" method="post" action="">
+  <table width="39%" border="0" cellspacing="1" cellpadding="2" bgcolor="#CCCCCC" align="center">
+    <tr bgcolor="#C8D7E6"> 
+      <td colspan="5" height="27"><font face="Verdana, Arial, Helvetica, sans-serif" size="2"><b>position 
+        Setup <a name="top"></a></b></font></td>
+    </tr>
+    <tr bgcolor="#FFFFFF"> 
+      <td colspan="5" nowrap><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Find 
+        <input type="text" name="xSearch" value="<?= $xSearch;?>">
+        <input type="submit" name="p2" value="Go">
+        Insert 
+        <select name="insertcount">
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="15">15</option>
+          <option value="20">20</option>
+        </select>
+        <input type="submit" name="p2" value="Insert">
+        <input type="submit" name="p2" value="List">
+        <input type="submit" name="p2" value="Close">
+        </font></td>
+    </tr>
+    <tr bgcolor="#E9E9E9"> 
+      <td width="3%"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000">#</font></b></td>
+      <td colspan="3"><a href="<?=$href.'&sort=position';?>"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="2" color="#000000">Position 
+        Description </font></b></a></td>
+      <td width="13%"><b><font face="Verdana, Arial, Helvetica, sans-serif" size="2"> 
+        <input type="hidden" name="sort" size="5" value="<?= $sort;?>">
+        </font></b></td>
+    </tr>
+    <?
+	if ($p2=='Insert')
+	{
+		$aposition['status']='INSERT';
+		$c=0;
+		while ($c < $insertcount)
+		{
+			$c++;
+	?>
+    <tr bgcolor="#FFFFFF"> 
+      <td width="3%" align=right nowrap> <font size=1> 
+        <?= $c;?>
+        <input type="checkbox" name="mark[]" value="<?= $c;?>" id="<?= $c;?>">
+        </font> </td>
+      <td colspan="3"> <input type="text" name="position[]" size="35"> </td>
+      <td width="13%"> <select name="enable[]">
+          <option value="E">E</option>
+          <option value="D">D</option>
+        </select> </td>
+    </tr>
+    <?
+		}
+		?>
+    <tr bgcolor="#FFFFFF"> 
+      <td colspan=5 height="2" valign="bottom">&nbsp;</td>
+    </tr>
+    <tr bgcolor="#E9E9E9"> 
+      <td colspan=4 height="26"><font face="Verdana, Arial, Helvetica, sans-serif" size="2">Saved 
+        Positions</font></td>
+      <td width="13%" height="26">&nbsp;</td>
+    </tr>
+    <?
+	} //if insert
+	else
+	{
+		$aposition['status']='LIST';
+		$c=0;
+	}
+	
+	$q = "select * from position ";
+	
+	if ($sort == '' || $sort=='position')
+	{
+		$sort = 'position';
+	}
+	$q .= " order by $sort ";
+
+	$qr = pg_query($q) or die (pg_error());
+	$ctr = $c;
+	while ($r = pg_fetch_object($qr))
+	{
+		$ctr++;
+		if ($ctr %10 == 0)
+		{
+			echo "<tr bgcolor='#FFFFFF'> 
+				 	<td colspan=10><input type='submit' name='p2' value='Save Checked'> <a href='#top'><font face='Verdana' size=2>Top</font></a></td></tr>";
+
+		}
+	?>
+    <tr  bgcolor=<?= ($r->enable=='D')? '#FFCCCC' :'#FFFFFF';?>> 
+      <td width="3%" align=right><font size=1> 
+        <input type="hidden" name="position_id[]" size="5" value="<?= $r->position_id;?>">
+        <? 
+	  echo "$ctr."; 
+	  if ($p2!='Insert')
+	  {
+         echo "<input type='checkbox' name='mark[]' value='$ctr'>";
+	  }
+	  ?>
+        </font> </td>
+      <td colspan="3"> <input type="text" name="position[]" size="35" value="<?= $r->position;?>"> 
+      </td>
+      <td width="13%"> <select name="enable[]">
+          <option value="E"  <?= ($r->enable!='N' ? 'Selected' :'');?>>E</option>
+          <option value="D"  <?= ($r->enable=='N' ? 'Selected' :'');?>>D</option>
+        </select> </td>
+    </tr>
+    <?
+	}
+	?>
+    <tr bgcolor="#FFFFFF"> 
+      <td colspan="5"><font face="Verdana, Arial, Helvetica, sans-serif" size="2"> 
+        <input type="submit" name="p2" value="Save Checked">
+        <a href="#top">Go Top</a></font></td>
+    </tr>
+  </table>
+</form>

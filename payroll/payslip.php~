@@ -1,0 +1,186 @@
+<?
+function printPayslip($r1,$output, $eject)
+{
+
+	$aPrn = null;
+	$aPrn = array();
+	
+	$details = "";
+	$details .=  "EMPLOYEE PAYSLIP                ";
+	$details .= "PAYROLL PERIOD : ".lookUpPayPeriodReturnValue('x',$r1['payroll_period_id'])."\n";
+	$details .= "Employee  : [".$r1['idnum'].'] '.$r1['elast'].', '.$r1['efirst']."\n";
+	$details .= "Branch    : ".adjustSize($r1['branch'],15)." Department: ".adjustSize($r1['department'],15)."\n";
+	$details .= str_repeat('=',79)."\n";
+
+	$temp=null;
+	$temp = array();
+	$temp['deduction_type'] = 'SSS Contribution';
+	$temp['deduction_amount'] = $r1['total_sss'];
+
+	$temp['income_type'] = 'Basic Income ' ;
+	$temp['income_amount'] = $r1['basic'];
+	$aPrn[] = $temp;
+	
+	$q = "select 
+					type_id as income_type_id,
+					payroll_detail_id,
+					qty  as income_qty,
+					amount as income_amount,
+					income_type,
+					income_code
+
+				from 
+					payroll_detail, income_type
+				where
+					income_type.income_type_id=payroll_detail.type_id and
+					payroll_header_id='".$r1['payroll_header_id']."' and
+					type='I'";
+	$qr = @pg_query($q) or message(pg_errormessage());
+	while ($r = @pg_fetch_assoc($qr))
+	{
+		$aPrn[] = $r;
+	}
+	
+	$q = "select 
+					type_id as deduction_type_id,
+					payroll_detail_id,
+					qty  as deduction_qty,
+					amount as deduction_amount,
+					deduction_type,
+					deduction_code
+				from 
+					payroll_detail, deduction_type
+				where
+					deduction_type.deduction_type_id=payroll_detail.type_id and
+					payroll_header_id='".$r1['payroll_header_id']."' and
+					type='D'";
+	$qr = @pg_query($q) or message(pg_errormessage());
+	
+	$c=1;
+
+	while ($r = @pg_fetch_assoc($qr))
+	{
+		if ($c>=count($aPrn))
+		{
+			$aPrn[] = $r;
+		}
+		else
+		{
+			$dummy = $aPrn[$c];
+			$dummy += $r;
+			$aPrn[$c] = $dummy;
+		}	
+		$c++;
+	}
+	
+	$temp=null;
+	$temp = array();
+	$temp['deduction_type'] = 'Tax Witheld';
+	$temp['deduction_amount'] = $r1['total_tax'];
+	if ($c>=count($aPrn))
+	{
+		$aPrn[] = $temp;
+	}
+	else
+	{
+		$dummy = $aPrn[$c];
+		$dummy += $temp;
+		$aPrn[$c] = $dummy;
+	}	
+	$c++;
+	
+
+	$temp=null;
+	$temp = array();
+	$temp['deduction_type'] = 'PHIC Contribution';
+	$temp['deduction_amount'] = $r1['total_phic'];
+	if ($c>=count($aPrn))
+	{
+		$aPrn[] = $temp;
+	}
+	else
+	{
+		$dummy = $aPrn[$c];
+		$dummy += $temp;
+		$aPrn[$c] = $dummy;
+	}	
+	$c++;
+
+	$temp=null;
+	$temp = array();
+	$temp['deduction_type'] = 'PAGIBIG Contribution';
+	$temp['deduction_amount'] = $r1['total_pagibig'];
+	if ($c>=count($aPrn))
+	{
+		$aPrn[] = $temp;
+	}
+	else
+	{
+		$dummy = $aPrn[$c];
+		$dummy += $temp;
+		$aPrn[$c] = $dummy;
+	}	
+	$c++;
+
+	$total_income = $total_deduction = $net_income = 0;
+	
+	$lc=4;
+	foreach ($aPrn as $temp)
+	{
+		$total_income += $temp['income_amount'];
+		$total_deduction += $temp['deduction_amount'];
+		$details .= adjustSize($temp['income_type'],20).'  '.
+			    adjustRight($temp['income_qty'],5).' '.
+			    adjustRight(number_format2($temp['income_amount'],2),10).' | '.
+
+			    adjustSize($temp['deduction_type'],20).'  '.
+			    adjustRight($temp['deduction_qty'],5).' '.
+			    adjustRight(number_format2($temp['deduction_amount'],2),10)."\n";
+		$lc++;	    
+	}
+	$net_income = $total_income - $total_deduction;
+	
+	$details .= str_repeat('-',38).'  '.str_repeat('-',39)."\n";
+	$details .= space(5).adjustSize('TOTAL INCOME',15).space(8).
+			adjustRight(number_format2($total_income,2),10).'   '.
+			space(5).adjustSize('TOTAL DEDUCTION',15).space(8).
+			adjustRight(number_format2($total_deduction,2),10)."\n";
+	$details .= str_repeat('=',79)."\n";
+	if ($output == 'Printer')
+	{
+		$details .= "<reset>";
+		$details .= "<bold>";
+	}
+	$details .= center('NET INCOME: P '.number_format($net_income,2),60);
+	if ($output == 'Printer')
+	{
+		$details .= "</bold>";
+	}
+	$details .= "\n\n";
+	$details .= "------------------------------\n";
+	$details .= $r1['elast'].', '.$r1['efirst']."\n";
+	
+	$lc += 6;
+	while ($lc < 20)
+	{
+		$details .= "\n";
+		$lc++;
+	}
+	
+	if ($output == 'Printer')
+	{
+		doPrint("<small3>");
+		doPrint($details);
+		if ($eject)
+		{
+			//doPrint('<eject>');
+		}
+	}
+	else
+	{
+		return $details;
+		//echo "<pre>$details</pre>";
+	}	
+	
+}
+?>

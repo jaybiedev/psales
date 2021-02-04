@@ -1,0 +1,259 @@
+
+
+                               Lopues East Center                               
+                             A/R SALES BY CUSTOMER                              
+                            05/03/2009 To 05/03/2009                            
+
+ #      Card No.    Account                  Reference    Grocery  DryGoods  	
+------ ---------- ------------------------- ---------- ------------ ------------ 
+   1.  AAB-001    ALAMIS, AUBREY JOY, D      00427007      1,051.05        0.00
+   2.  AAB-014    ALAMIS ABBIE JEAN          00127317         21.60        0.00
+   3.  AAB-014    ALAMIS ABBIE JEAN          00281690        749.45        0.00
+   4.  ACE-002    BUENAVISTA MARY GRACE G    00404055      2,792.40        0.00
+   5.  ACE-002    BUENAVISTA MARY GRACE G    00377600          0.00      141.45
+   6.  ACE-006    EBRO EMILY A               00404054      1,994.75        0.00
+   7.  ACE-012    FAJARDO ROWENA             00427059      1,220.00        0.00
+   8.  ADD-001    ALVARADO, DEARLY, D        00703759      1,282.65        0.00
+   9.  ADD-001    ALVARADO, DEARLY, D        00337579          0.00      294.65
+  10.  ADD-001    ALVARADO, DEARLY, D        00703760        921.60        0.00
+  11.  ADD-017    ALVARADO, ROSITA, R        00337586          0.00      300.35
+  12.  ADD-017    ALVARADO, ROSITA, R        00703763        403.15        0.00
+  13.  ADD-017    ALVARADO, ROSITA, R        00703762        410.55        0.00
+  14.  ADD-017    ALVARADO, ROSITA, R        00337585          0.00      162.45
+  15.  ADD-017    ALVARADO, ROSITA, R        00703761      1,105.25        0.00
+  16.  ADD-054    OBOG, MA. ARLENE, V.       00404130      1,593.40        0.00
+  17.  ADD-069    DIAMANTE  MAE              00337562          0.00      193.60
+  18.  ADD-069    DIAMANTE  MAE              00337561          0.00      861.20
+  19.  ADD-069    DIAMANTE  MAE              00419217          0.00       78.30
+  20.  ADD-100    CASILAGAN, MARGARITA, E    00404105        629.20        0.00
+  21.  ADD-100    CASILAGAN, MARGARITA, E    00404107        621.60        0.00
+  22.  ADD-100    CASILAGAN, MARGARITA, E    00404106        419.75        0.00
+  23.  ADD-111    AGSAM, PANDORA, T          00337554          0.00      203.05
+  24.  AVC-010    HINOGIN GLODIE V.          00197720        713.15        0.00
+  25.  BWD-026    MAUN, MAXWELL, J           00197650        191.05        0.00
+  26.  CCP-001    COSETTE, PIANSAY, C        00377721          0.00      952.00
+  27.  CCP-001    COSETTE, PIANSAY, C        00377728          0.00       46.30
+  28.  CCP-001    COSETTE, PIANSAY, C        00377066      2,677.15        0.00
+  29.  CCP-001    COSETTE, PIANSAY, C        00377726          0.00    2,322.85
+  30.  CCP-002    TABJAN, LORENA, P          00212702        158.95        0.00
+  31.  CCP-002    TABJAN, LORENA, P          00630041        678.95        0.00
+  32.  CPB-003    GELISANGA, INDIRA B.       00703708        677.10        0.00
+  33.  CPB-003    GELISANGA, INDIRA B.       00703709      2,676.30        0.00
+  34.  CSC-031    CABALLERO LORA MAE P       00967965          0.00      513.80
+  35.  CSC-031    CABALLERO LORA MAE P       00405462     13,243.15        0.00
+  36.  CSC-031    CABALLERO LORA MAE P       00602587      2,133.70        0.00
+  37.  ETL-086    BAYONETA, BRYNE, T         00227967        396.05        0.00
+  38.  GEM-002    BIENDO, JULIET H.          00630105      1,500.00        0.00
+  39.  HJE-004    CARITATIVO EMMA J          00967840          0.00      357.00
+  40.  HJE-004    CARITATIVO EMMA J          00521286         37.65        0.00
+  41.  JET-003    DACLAN, LUNADEL, C         00464873        993.70        0.00
+  42.  JLM-001    JIMIERA, LYN, M            00521412      1,000.00        0.00
+  43.  JOA-002    UBERAS, LALAINE, B         00377605          0.00      350.65
+  44.  JOA-002    UBERAS, LALAINE, B         00337542          0.00      155.85
+  45.  JOA-015    BALBASTRO, CORAZON, T      00377135      2,777.10        0.00
+  46.  LBD-002    DEGILLO, ZENAIDA, S        00703732        251.05        0.00
+  47.  LBD-004    ABABAO, JEANNE R.          00212638      1,068.40        0.00
+  48.  LBD-004    ABABAO, JEANNE R.          00464701      2,081.45        0.00
+
+
+                               Lopues East Center                               
+                             A/R SALES BY CUSTOMER                              
+                            05/03/2009 To 05/03/2009                            
+
+ #      Card No.    Account                  Reference    Grocery  DryGoods  	
+------ ---------- ------------------------- ---------- ------------ ------------ 
+  49.  MLP-001    MATTA, LOLITA, P.          00377688          0.00      484.40
+  50.  MLP-001    MATTA, LOLITA, P.          00281712        803.55        0.00
+  51.  MLP-001    MATTA, LOLITA, P.          00377685          0.00      196.45
+  52.  MLP-001    MATTA, LOLITA, P.          00405432          0.00      489.20
+  53.  MLP-001    MATTA, LOLITA, P.          00510344          0.00      212.90
+  54.  MLP-001    MATTA, LOLITA, P.          00281711      1,026.40        0.00
+  55.  MLP-001    MATTA, LOLITA, P.          00405406      3,787.10        0.00
+  56.  MLP-011    BIONA, ROSALIE, V          00404178      1,135.25        0.00
+  57.  MLP-011    BIONA, ROSALIE, V          00510554          0.00      642.75
+  58.  MLP-011    BIONA, ROSALIE, V          00337692          0.00      308.10
+  59.  MLP-011    BIONA, ROSALIE, V          00602663         87.35        0.00
+  60.  MOA-005    CORNEL, MARGA,             00337559          0.00      398.55
+  61.  MOA-005    CORNEL, MARGA,             00337552          0.00      428.80
+  62.  MOA-015    REYES, GLORIA, M           00419374          0.00      799.10
+  63.  MOA-015    REYES, GLORIA, M           00703841      5,563.70       50.05
+  64.  MOA-015    REYES, GLORIA, M           00703840      3,409.00        0.00
+  65.  MOA-016    CASTRO, SHEILA, P          00185736        153.70        0.00
+  66.  MOC-005    LEDESMA, LAICA, T          00464731      1,547.10        0.00
+  67.  MOC-038    DE LA CRUZ, JOSEFA, L      00197628        366.05        0.00
+  68.  MOC-039    TAD-Y, CECILE D.           00377635          0.00      332.20
+  69.  MOC-039    TAD-Y, CECILE D.           00405392      1,362.35        0.00
+  70.  MOC-039    TAD-Y, CECILE D.           00404080        180.80        0.00
+  71.  NBZ-003    DETOYATO GRACE G           00426937      1,809.05        0.00
+  72.  NBZ-023    AMAHIT MA SHEILA C         00405468        439.45      174.00
+  73.  NBZ-023    AMAHIT MA SHEILA C         00968022          0.00    1,764.75
+  74.  NBZ-023    AMAHIT MA SHEILA C         00968020          0.00    1,558.70
+  75.  NFC-001    DULLA EVELYN V             00703720        892.35        0.00
+  76.  NFC-001    DULLA EVELYN V             00377614          0.00      226.35
+  77.  NFC-001    DULLA EVELYN V             00703719         75.00        0.00
+  78.  NFC-005    MALACAD MYRNA              00212664      1,475.80        0.00
+  79.  NFC-005    MALACAD MYRNA              00404045      1,368.95        0.00
+  80.  ODK-003    KHO, DORIS,                00337594          0.00    2,501.95
+  81.  PRC-002    CANTO TERESITA, P          00703766        561.30        0.00
+  82.  PRC-002    CANTO TERESITA, P          00967940          0.00      223.60
+  83.  PRC-002    CANTO TERESITA, P          00630069        700.00        0.00
+  84.  PRC-002    CANTO TERESITA, P          00703771        995.80        0.00
+  85.  PRC-002    CANTO TERESITA, P          00630070      1,000.00        0.00
+  86.  PRC-002    CANTO TERESITA, P          00703770        569.15        0.00
+  87.  PRC-002    CANTO TERESITA, P          00630071      1,500.00        0.00
+  88.  PRC-002    CANTO TERESITA, P          00703769        923.45        9.50
+  89.  PRC-002    CANTO TERESITA, P          00630073        508.40        0.00
+  90.  PRC-002    CANTO TERESITA, P          00703764        798.15        0.00
+  91.  PRC-002    CANTO TERESITA, P          00630076        738.00        0.00
+  92.  PRC-002    CANTO TERESITA, P          00703768      2,084.60       19.00
+  93.  PRC-002    CANTO TERESITA, P          00703765        526.30        0.00
+  94.  PRC-002    CANTO TERESITA, P          00703767        514.20        0.00
+  95.  PRC-009    MALUNES, MARIE ANTONETTE   00185693        600.00        0.00
+  96.  PRC-009    MALUNES, MARIE ANTONETTE   00630074        550.80        0.00
+
+
+                               Lopues East Center                               
+                             A/R SALES BY CUSTOMER                              
+                            05/03/2009 To 05/03/2009                            
+
+ #      Card No.    Account                  Reference    Grocery  DryGoods  	
+------ ---------- ------------------------- ---------- ------------ ------------ 
+  97.  PRC-009    MALUNES, MARIE ANTONETTE   00630075        900.00        0.00
+  98.  PRC-009    MALUNES, MARIE ANTONETTE   00967989          0.00      209.65
+  99.  PRC-009    MALUNES, MARIE ANTONETTE   00630089      1,203.60        0.00
+ 100.  PRC-009    MALUNES, MARIE ANTONETTE   00630090      1,340.95        0.00
+ 101.  PRC-010    CANTO, DAISY, B            00630077      2,000.00        0.00
+ 102.  PRC-013    DOCTORA, EDITHA C.         00377671          0.00      627.70
+ 103.  PRC-013    DOCTORA, EDITHA C.         00703777      1,144.95        0.00
+ 104.  PRC-013    DOCTORA, EDITHA C.         00377672          0.00      179.45
+ 105.  PRC-013    DOCTORA, EDITHA C.         00703778        910.25        0.00
+ 106.  PRC-013    DOCTORA, EDITHA C.         00703785        267.35        0.00
+ 107.  PRC-013    DOCTORA, EDITHA C.         00967959          0.00      200.20
+ 108.  PRC-013    DOCTORA, EDITHA C.         00967958          0.00      306.95
+ 109.  PRC-013    DOCTORA, EDITHA C.         00377673          0.00       84.00
+ 110.  PRC-013    DOCTORA, EDITHA C.         00703772        996.45        0.00
+ 111.  PRC-013    DOCTORA, EDITHA C.         00703773      1,206.95        0.00
+ 112.  PRC-013    DOCTORA, EDITHA C.         00630078      1,000.00        0.00
+ 113.  PRC-013    DOCTORA, EDITHA C.         00703774        533.15        0.00
+ 114.  PRC-013    DOCTORA, EDITHA C.         00065207          0.00      289.50
+ 115.  PRC-013    DOCTORA, EDITHA C.         00703776        594.30        0.00
+ 116.  PRC-036    SALAZAR, CHERRY, B         00185691      1,429.45        0.00
+ 117.  PRC-036    SALAZAR, CHERRY, B         00185692        170.55        0.00
+ 118.  QRE-002    ERBITE, EDNA MAY, U        00405537      1,300.80        0.00
+ 119.  RBG-027    JAVIER, KENNETH, P         00127302        203.00        0.00
+ 120.  RBG-027    JAVIER, KENNETH, P         00967852          0.00       68.00
+ 121.  RBG-027    JAVIER, KENNETH, P         00521325        621.30        0.00
+ 122.  RBG-027    JAVIER, KENNETH, P         00127298      1,797.00        0.00
+ 123.  RG-051     GEVA, MELISSA, S           00127266      1,972.95        0.00
+ 124.  RG-053     ARCOBILLAS, ESTHER, C      00464745     12,000.00        0.00
+ 125.  RG-059     MONALYN OR ANTONIO LOCSIN  00464830      3,325.40        0.00
+ 126.  RG-072     IGNACIO MELBA A            00337558          0.00    1,172.50
+ 127.  RG-072     IGNACIO MELBA A            00127257      2,856.80       47.20
+ 128.  RG-072     IGNACIO MELBA A            00333579          0.00      300.80
+ 129.  RG-072     IGNACIO MELBA A            00404067      1,731.25        0.00
+ 130.  RG-090     VILLANUEVA ELSA D.         00127249         88.70        0.00
+ 131.  RG-095     ZAMORA, NAIDA, B           00228046      1,270.00        0.00
+ 132.  RG-095     ZAMORA, NAIDA, B           00459188          0.00    1,229.80
+ 133.  RG-099     LEDESMA, MARILOU, B        00703783        500.00        0.00
+ 134.  RG-120     CALEA, EAST, ..            00464738     13,516.50        0.00
+ 135.  RG-133     PESCADOR, SONIA, B         00464812        145.15        0.00
+ 136.  RG-133     PESCADOR, SONIA, B         00464802        837.75        0.00
+ 137.  RG-133     PESCADOR, SONIA, B         00464801        425.50        0.00
+ 138.  RG-133     PESCADOR, SONIA, B         00968002          0.00       91.60
+ 139.  RG-264     ESTANDER SUSAN             00197633        522.00        0.00
+ 140.  RG-279     JARANILLA, MILDRED,        00377777         52.25    1,147.40
+ 141.  RG-336     QUIZAN, MILDRED R          00404138        880.80        0.00
+ 142.  RG-367     CABALQUINTO, DAISYLENE, A  00337682          0.00      188.90
+ 143.  RG-367     CABALQUINTO, DAISYLENE, A  00199685      1,320.60        0.00
+ 144.  RTA-001    RIVERA, DAVE U             00459094          0.00      457.95
+
+
+                               Lopues East Center                               
+                             A/R SALES BY CUSTOMER                              
+                            05/03/2009 To 05/03/2009                            
+
+ #      Card No.    Account                  Reference    Grocery  DryGoods  	
+------ ---------- ------------------------- ---------- ------------ ------------ 
+ 145.  RTA-001    RIVERA, DAVE U             00703749      1,073.70        0.00
+ 146.  RTA-001    RIVERA, DAVE U             00703706        597.05        0.00
+ 147.  RTA-001    RIVERA, DAVE U             00521351         18.15        0.00
+ 148.  RTA-001    RIVERA, DAVE U             00967903          0.00      517.55
+ 149.  RTA-001    RIVERA, DAVE U             00510342          0.00      937.80
+ 150.  RTA-001    RIVERA, DAVE U             00521350          0.00       60.65
+ 151.  RTA-001    RIVERA, DAVE U             00521349        221.30        0.00
+ 152.  RTA-044    RIVERA, DONNY, U           00185799          0.00       94.45
+ 153.  RTA-044    RIVERA, DONNY, U           00185798      2,507.40        0.00
+ 154.  RTA-044    RIVERA, DONNY, U           00968144          0.00      196.60
+ 155.  SAF-008    ESTANDER, WENKUEN          00703748          0.00       70.80
+ 156.  SAF-008    ESTANDER, WENKUEN          00703747      1,515.55        0.00
+ 157.  SAF-008    ESTANDER, WENKUEN          00703746      2,707.90        0.00
+ 158.  SAF-025    PESCADOR, ROMY  M.         00404065      1,999.35        0.00
+------ ---------- ------------------------- ---------- ------------ ------------ 
+    TOTAL COUNT : 158                                    156,230.50   26,233.30
+------ ---------- ------------------------- ---------- ------------ ------------ 
+Total Grocery  :   156,230.50
+Total Drygoods :    26,233.30
+
+
+
+
+
+                               Lopues East Center                               
+                             A/R SALES BY CUSTOMER                              
+                            06/09/2009 To 06/09/2009                            
+
+ #      Card No.    Account                  Reference    Grocery  DryGoods  	
+------ ---------- ------------------------- ---------- ------------ ------------ 
+   1.  ACE-012    FAJARDO ROWENA             00523777          0.00      100.00
+   2.  BWD-022    TALIMODAO, JUVY S.         00194028        478.00        0.00
+   3.  BWD-033    HECHANOVA, ROSSANA, E      00236622        890.70        0.00
+   4.  CCP-001    COSETTE, PIANSAY, C        00429547          0.00      349.45
+   5.  CCP-001    COSETTE, PIANSAY, C        00341991          0.00      587.25
+   6.  CCP-001    COSETTE, PIANSAY, C        00236660      1,058.70        0.00
+   7.  CPB-001    BAUTISTA, CONSOLACION, P   00980860          0.00    1,000.00
+   8.  CRT-003    CLARITO, JOE MARIE, .      00434868      1,162.40        0.00
+   9.  CRT-003    CLARITO, JOE MARIE, .      00340991          0.00      450.70
+  10.  DAL-001    SATOC ERMETO S.            00980839          0.00      508.00
+  11.  DAL-004    CLAVEL ANNABELLE A         00523556          0.00      131.10
+  12.  ETL-086    BAYONETA, BRYNE, T         00435034        996.70        0.00
+  13.  HJE-005    GUILLERGAN, AMADO, J       00208901        981.95        0.00
+  14.  JKL-006    LIZARES, CARISSA, K        00193920        524.20        0.00
+  15.  MOA-012    YAP, LINMAR, F             00207414      1,186.45        0.00
+  16.  MOC-039    TAD-Y, CECILE D.           00532290      1,435.20        0.00
+  17.  NBZ-002    DINGCONG JOSEPHINE B       00229836         45.55        0.00
+  18.  NBZ-003    DETOYATO GRACE G           00637664        801.75        0.00
+  19.  NBZ-013    TRES REYES EMILIA R        00434855        420.25        0.00
+  20.  NBZ-013    TRES REYES EMILIA R        00229500         73.70        0.00
+  21.  PJL-003    CAPE, ELEANOR, Y           00473740        709.70        0.00
+  22.  RBG-003    ILIGAN, GLADYS, F          00620337        433.40        0.00
+  23.  RG-035     REMINGS EAST               00532159        274.00        0.00
+  24.  RG-035     REMINGS EAST               00207535      3,879.75        0.00
+  25.  RG-035     REMINGS EAST               00003188          0.00      119.30
+  26.  RG-045     LEC COOP                   00532153        300.00        0.00
+  27.  RG-045     LEC COOP                   00207651        300.00        0.00
+  28.  RG-052     ALESNA YOLANDA G           00473634      1,260.00        0.00
+  29.  RG-052     ALESNA YOLANDA G           00980779          0.00      240.00
+  30.  RG-095     ZAMORA, NAIDA, B           00532206        813.50        0.00
+  31.  RG-123     SMFI-MAGNOLIA CHICKEN, ..  00980716          0.00    1,658.00
+  32.  RG-129     REBITOY,  BELEN            00637654        845.00        0.00
+  33.  RG-146     POLOYAPOY, ROCHELLE, D     00229598        521.75        0.00
+  34.  RG-180     BALOYO, NORMA, L           00003901          0.00      285.50
+  35.  RG-203     CALVO DENMARK              00236663        553.55        0.00
+  36.  RG-208     UYTIEPO, EDWARD, M         00532190          0.00      517.45
+  37.  RG-208     UYTIEPO, EDWARD, M         00532165      4,151.25        0.00
+  38.  RG-323     MONFORT, MA. ALICIA, VARE  00637430      2,533.65        0.00
+  39.  RG-336     QUIZAN, MILDRED R          00470577          0.00    1,799.85
+  40.  RTA-041    SARROSA, LEILANI, A        00207573        177.10        0.00
+  41.  RTA-044    RIVERA, DONNY, U           00193941          0.00      280.00
+  42.  RTA-047    OCTAVIO, EVELYN, L         00412922      1,153.35       22.65
+  43.  VTT-001    VILLANUEVA TERESA T        00637683        606.70        0.00
+  44.  VTT-001    VILLANUEVA TERESA T        00341321          0.00      711.35
+  45.  VTT-017    PANAUNGON JAY-AR T         00193859        119.20        0.00
+------ ---------- ------------------------- ---------- ------------ ------------ 
+    TOTAL COUNT : 45                                      28,687.45    8,760.60
+------ ---------- ------------------------- ---------- ------------ ------------ 
+Total Grocery  :    28,687.45
+Total Drygoods :     8,760.60
+
+
+

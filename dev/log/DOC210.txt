@@ -1,0 +1,81 @@
+
+
+                               Lopues East Center                               
+                             A/R SALES BY CUSTOMER                              
+                            06/10/2007 To 06/10/2007                            
+
+ #      Card No.    Account                  Reference    Grocery  DryGoods  	
+------ ---------- ------------------------- ---------- ------------ ------------ 
+   1.  ADD044     DE LA CRUZ, SOLYMA, S      00289071          0.00      443.00
+   2.  ADD044     DE LA CRUZ, SOLYMA, S      00034431      1,074.21        0.00
+   3.  ADD076     PEREZ, VERONICA, N         00018344          0.00    1,144.00
+   4.  AVC014     VILLANUEVA, ANNALYN,       00302083        204.74      115.00
+   5.  AVC014     VILLANUEVA, ANNALYN,       00185706          0.00      219.64
+   6.  AVC014     VILLANUEVA, ANNALYN,       00185705          0.00       96.22
+   7.  BWD016     BUISON, LUCY, C            00185941          0.00      600.00
+   8.  ETL019     BAGAIN, JOEDEMA M.         00018280          0.00      150.00
+   9.  ETL034     ADRIAS, MA. FE C.          00302203        878.95        0.00
+  10.  ETL086     BAYONETA, BRYNE, T         00247242        635.21        0.00
+  11.  GEM001     GALLOFIN, EDNA, M          00723187          0.00       83.00
+  12.  GEM020     SEVERINO, CHRISTINE, P     00331473      1,175.00        0.00
+  13.  GEM023     UNSON, MA.VICTORIA, J      00034410        818.47        0.00
+  14.  GEM028     BIELES, ROSALINDA J.       00247187      1,222.63       78.00
+  15.  GTU005     CRISOSTOMO, RUMEL, A       00028034        904.05        0.00
+  16.  GTU007     GARRIEL, MARY JEAN V.      00723229          0.00    1,699.00
+  17.  GTU010     TIRONA, CATHERINE S.       00153666          0.00      133.44
+  18.  GTU010     TIRONA, CATHERINE S.       00018312          0.00      240.00
+  19.  GTU010     TIRONA, CATHERINE S.       00723284          0.00      256.00
+  20.  HOR001     RILLO, HELEN, O            00018251          0.00    2,223.00
+  21.  JLM008     VILLAGRACIA, AYALIN, T     00484481      1,414.74        0.00
+  22.  JLM008     VILLAGRACIA, AYALIN, T     00153581          0.00      475.08
+  23.  JOA006     HOLIGON, MA. LUZ J.        00153499          0.00      456.75
+  24.  JOA006     HOLIGON, MA. LUZ J.        00233314          0.00      342.00
+  25.  JOA006     HOLIGON, MA. LUZ J.        00018177          0.00    1,201.25
+  26.  MOA001     NOBLE, JOSIE, M            00034286        986.00        0.00
+  27.  MOA012     YAP, LINMAR, F             00484504        980.53        0.00
+  28.  OND013     CELIS, MARILYN C.          00214722        651.82        0.00
+  29.  PJL002     NOBLE, ADELINA A.          00723107          0.00    1,539.00
+  30.  PRC010     CANTO, DAISY, B            00233449          0.00      968.00
+  31.  RG-030     DOROMAL, AILEEN, L         00331583        740.25        8.10
+  32.  RG-030     DOROMAL, AILEEN, L         00331638        201.50        0.00
+  33.  RG-035     REMINGS EAST               00302194      4,095.90        0.00
+  34.  RG-035     REMINGS EAST               00302193        605.65      102.50
+  35.  RG-095     ZAMORA, NAIDA, B           00214658        300.00        0.00
+  36.  RG-095     ZAMORA, NAIDA, B           00293253          0.00    1,000.00
+  37.  RG-116     REQUILLO, ELISA, S         00233461          0.00      229.00
+  38.  RG-116     REQUILLO, ELISA, S         00293386          0.00      722.22
+  39.  RG-123     SMFI-MAGNOLIA CHICKEN, ..  00331576        515.50        0.00
+  40.  RG-123     SMFI-MAGNOLIA CHICKEN, ..  00331575      3,659.25        0.00
+  41.  RG-125     AGTOTO, JEAN   ., V        00247138          0.00      658.89
+  42.  RG-125     AGTOTO, JEAN   ., V        00211714          0.00      819.86
+  43.  RG-149     LOZADA, JEANSEN, E         00037039        215.75        0.00
+  44.  RG-149     LOZADA, JEANSEN, E         00484513      1,076.75        0.00
+  45.  RG-165     MARTINEZ, MA.ELIZABETH, L  00037780      1,693.95       28.42
+  46.  RG-173     GAMBOA, ROSE  ANN, R       00149423      1,334.90        0.00
+  47.  RG-173     GAMBOA, ROSE  ANN, R       00289059          0.00    1,071.75
+  48.  RG-178     BOSTON FINANCE, & INVESTM  00723196          0.00      932.00
+  49.  RG-178     BOSTON FINANCE, & INVESTM  00723200          0.00      749.00
+  50.  RG-178     BOSTON FINANCE, & INVESTM  00288973          0.00    1,226.75
+
+
+                               Lopues East Center                               
+                             A/R SALES BY CUSTOMER                              
+                            06/10/2007 To 06/10/2007                            
+
+ #      Card No.    Account                  Reference    Grocery  DryGoods  	
+------ ---------- ------------------------- ---------- ------------ ------------ 
+  51.  RG-209     ENRIQUEZ, AMELIA/JESUS,    00551599        588.65        0.00
+  52.  RG-270     JIMENEZ, JULIO, S          00233364          0.00      394.00
+  53.  RG-288     RODRIGUEZ, NELDA, P        00484352        878.00        0.00
+  54.  RTA037     LIBO-ON, ELMER, A          00302298        979.47        0.00
+  55.  RTA040     LIM, KARMELE, J            00302124        680.25        0.00
+  56.  RTA061     LOPEZ, BELEN, M            00723372          0.00      199.00
+  57.  SAF045     CANOY, LINA, G             00211722          0.00      438.25
+------ ---------- ------------------------- ---------- ------------ ------------ 
+    TOTAL COUNT : 57                                      28,512.12   21,042.12
+------ ---------- ------------------------- ---------- ------------ ------------ 
+Total Grocery  :    28,512.12
+Total Drygoods :    21,042.12
+
+
+

@@ -1,0 +1,89 @@
+
+
+                               Lopues East Center                               
+                             A/R SALES BY CUSTOMER                              
+                            04/06/2008 To 04/06/2008                            
+
+ #      Card No.    Account                  Reference    Grocery  DryGoods  	
+------ ---------- ------------------------- ---------- ------------ ------------ 
+   1.  ACE-038    ASAN, JULIE, F             00126251      1,069.80        0.00
+   2.  ADD-008    DULACA, ELSA, J            00316668      1,000.00        0.00
+   3.  ADD-020    SANCHEZ, JENELYN J.        00010404        325.25        0.00
+   4.  ADD-044    DE LA CRUZ, SOLYMA, S      00099871        707.40        0.00
+   5.  AVC-008    VILLAGANTE, KATHY T.       00240368          0.00      128.90
+   6.  AVC-008    VILLAGANTE, KATHY T.       00552071      1,785.80        0.00
+   7.  AVC-011    ODON, ANNABELLE, A         00387786          0.00      231.45
+   8.  AVC-011    ODON, ANNABELLE, A         00287268          0.00      472.00
+   9.  CCP-001    COSETTE, PIANSAY, C        00099932      2,515.00        0.00
+  10.  CCP-001    COSETTE, PIANSAY, C        00240371          0.00      214.00
+  11.  CCP-001    COSETTE, PIANSAY, C        00240370          0.00      320.00
+  12.  CCP-001    COSETTE, PIANSAY, C        00835311          0.00      751.00
+  13.  CPB-002    TABLIGAN, ROMELA M.        00316577        377.35        0.00
+  14.  ETL-024    BRITANIA, MARICEL, D       00373678        481.20        0.00
+  15.  ETL-024    BRITANIA, MARICEL, D       00373677        226.85        0.00
+  16.  GEM-001    GALLOFIN, EDNA, M          00299447      1,364.60        0.00
+  17.  GEM-001    GALLOFIN, EDNA, M          00425298        387.10        0.00
+  18.  GEM-012    BERCADES, MA. CARMEN, C    00039800          0.00      164.00
+  19.  GEM-015    RIVERA, ANN MAE, T         00096762      2,974.00        0.00
+  20.  GEM-015    RIVERA, ANN MAE, T         00835133          0.00      522.10
+  21.  GRA-002    SION, DOROTHY, G           00617263        600.80        0.00
+  22.  GRA-004    TABUJARA, MICHELLE, A      00099948      2,152.95        0.00
+  23.  HJE-005    GUILLERGAN, AMADO, J       00373717        822.75        0.00
+  24.  LBD-014    LACUAS, JANE, G            00425376        417.20        0.00
+  25.  MBC-008    ALUNAN, SANDRA,            00373757      2,682.64        0.00
+  26.  MLP-001    MATTA, LOLITA, P.          00617411      6,997.70        0.00
+  27.  MOA-004    HERNANDEZ, THELMA, G       00316686      1,356.05        0.00
+  28.  NFC-002    MALACAD JULIET             00835028          0.00      669.50
+  29.  NFC-002    MALACAD JULIET             00834996          0.00      995.65
+  30.  NFC-015    URSAL RENANTE M.           00552123      1,102.65        0.00
+  31.  ODK-013    BIASCA, BETHANY B.         00316584      3,000.00        0.00
+  32.  QRE-003    BAT-OG, LOLITA, A          00344454        278.95        0.00
+  33.  QRE-004    JARA, ALPHA, C             00835002          0.00      188.00
+  34.  RG-009     GONZAGA, MA. VILLA/ALEXAN  00299330      2,514.55      189.75
+  35.  RG-014     FLORENTINO, MARITES, B     00410346         21.75      297.80
+  36.  RG-014     FLORENTINO, MARITES, B     00425291          0.00      216.65
+  37.  RG-030     DOROMAL, AILEEN, L         00552024        315.00        0.00
+  38.  RG-030     DOROMAL, AILEEN, L         00552053        590.75        0.00
+  39.  RG-035     REMINGS EAST               00617428        704.90        0.00
+  40.  RG-035     REMINGS EAST               00373659        555.65        0.00
+  41.  RG-035     REMINGS EAST               00373718        141.25        0.00
+  42.  RG-035     REMINGS EAST               00552041        571.50        0.00
+  43.  RG-035     REMINGS EAST               00617284        995.50        0.00
+  44.  RG-035     REMINGS EAST               00617413      1,070.00        0.00
+  45.  RG-035     REMINGS EAST               00617414      3,517.50        0.00
+  46.  RG-035     REMINGS EAST               00373599        246.55        0.00
+  47.  RG-050     ONG  ROSITA S              00373651      1,415.75        0.00
+  48.  RG-052     MALACAD MARY JANE E        00617358        439.50        0.00
+  49.  RG-052     MALACAD MARY JANE E        00410303        326.55        0.00
+  50.  RG-052     MALACAD MARY JANE E        00617444        150.10        0.00
+
+
+                               Lopues East Center                               
+                             A/R SALES BY CUSTOMER                              
+                            04/06/2008 To 04/06/2008                            
+
+ #      Card No.    Account                  Reference    Grocery  DryGoods  	
+------ ---------- ------------------------- ---------- ------------ ------------ 
+  51.  RG-093     ECHAVEZ, ELENITA, P        00211735      1,374.25       67.00
+  52.  RG-095     ZAMORA, NAIDA, B           00299427        212.25        0.00
+  53.  RG-095     ZAMORA, NAIDA, B           00287270          0.00      118.00
+  54.  RG-123     SMFI-MAGNOLIA CHICKEN, ..  00096767        930.00        0.00
+  55.  RG-123     SMFI-MAGNOLIA CHICKEN, ..  00096766      2,065.50        0.00
+  56.  RG-162     GROMEA, HELEN E.           00425081        148.75        0.00
+  57.  RG-162     GROMEA, HELEN E.           00316574        290.25        0.00
+  58.  RG-208     UYTIEPO, EDWARD, M         00373778      2,924.50        0.00
+  59.  RG-218     GIMOTEA BRYN C             00299407        245.25        0.00
+  60.  RG-318     MELOCOTON, OFELIA,         00551985        804.50        0.00
+  61.  RTA-001    RIVERA, DAVE U             00425429        500.00        0.00
+  62.  RTA-033    GARCIA, VIRGINIA, A        00299531        437.10        0.00
+  63.  RTA-070    BELANO, MA. JARDIOLIN, J   00085350      1,363.35        0.00
+  64.  SAF-012    ARROYO, ARSENIO, G         00344449      1,144.80        0.00
+  65.  SUJ-009    ORDOYO, JONA  A.           00319864          0.00      249.00
+------ ---------- ------------------------- ---------- ------------ ------------ 
+    TOTAL COUNT : 65                                      58,643.34    5,794.80
+------ ---------- ------------------------- ---------- ------------ ------------ 
+Total Grocery  :    58,643.34
+Total Drygoods :     5,794.80
+
+
+

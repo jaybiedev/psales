@@ -1,0 +1,86 @@
+
+
+                               Lopues East Center                               
+                             A/R SALES BY CUSTOMER                              
+                            06/16/2007 To 06/16/2007                            
+
+ #      Card No.    Account                  Reference    Grocery  DryGoods  	
+------ ---------- ------------------------- ---------- ------------ ------------ 
+   1.  ADD027     CABALHIN, MA.GINA, A       00725864          0.00       40.00
+   2.  ADD027     CABALHIN, MA.GINA, A       00150743        978.16        0.00
+   3.  ADD032     OCTAVIO, MARLYN, D         00234547          0.00      297.67
+   4.  ADD032     OCTAVIO, MARLYN, D         00295118          0.00      702.00
+   5.  ADD032     OCTAVIO, MARLYN, D         00062547          0.00      202.69
+   6.  ADD032     OCTAVIO, MARLYN, D         00725995          0.00      249.75
+   7.  ADD032     OCTAVIO, MARLYN, D         00150767      1,268.42        8.10
+   8.  BWD009     AGBAY, ALMA MILAGROS, G    00155849          0.00      147.11
+   9.  BWD009     AGBAY, ALMA MILAGROS, G    00150642        296.37        0.00
+  10.  BWD018     JONOTA ,JESUSA B.          00181411        426.32        0.00
+  11.  BWD018     JONOTA ,JESUSA B.          00188421          0.00      651.36
+  12.  BWD018     JONOTA ,JESUSA B.          00234518          0.00      143.11
+  13.  BWD018     JONOTA ,JESUSA B.          00725807          0.00      270.99
+  14.  BWD023     MAGAN, EILLEN MAE, P       00333194        520.53        0.00
+  15.  BWD023     MAGAN, EILLEN MAE, P       00725859          0.00      479.00
+  16.  CCP007     DIAZ, JULIA TRACY B.       00333144        328.16        0.00
+  17.  CPB012     ASAN, LENI RUTH H.         00552956          0.00      129.00
+  18.  CRT011     BARABONA, NONA, D          00156054          0.00      187.00
+  19.  CRT011     BARABONA, NONA, D          00156055          0.00      202.44
+  20.  CRT011     BARABONA, NONA, D          00485881        990.68        0.00
+  21.  CRT011     BARABONA, NONA, D          00725892          0.00      529.00
+  22.  CRT011     BARABONA, NONA, D          00485880        664.11        0.00
+  23.  ETL046     MONTANO GRACE, L           00029629        329.73        0.00
+  24.  GEM002     BIENDO, JULIET H.          00289936          0.00    1,383.88
+  25.  GEM009     ALCOBILLA, LILIBETH, R     00486041      2,500.00        0.00
+  26.  GTU001     UY, GRACE, T               00029326        792.89        0.00
+  27.  GTU001     UY, GRACE, T               00725605          0.00      129.95
+  28.  HJE014     BARCELONA, GAYNOR, N       00303608        511.25        0.00
+  29.  JLM019     RAMIREZ, FEME, S           00303611      1,710.00        0.00
+  30.  MBC008     ALUNAN, SANDRA,            00725732          0.00    1,982.44
+  31.  MOA017     IBANEZ, MA. THERESA C.     00039338      1,047.77        0.00
+  32.  PRC012     CASTILLO, ERLYN, C         00552899      2,030.00        0.00
+  33.  RBG013     JOERNALDO, MARISSA, P      00188631          0.00      279.42
+  34.  RBG013     JOERNALDO, MARISSA, P      00725983          0.00    1,639.00
+  35.  RBG013     JOERNALDO, MARISSA, P      00333219        786.32        0.00
+  36.  RG-030     DOROMAL, AILEEN, L         00216530        900.00        0.00
+  37.  RG-035     REMINGS EAST               00552933        529.25        0.00
+  38.  RG-035     REMINGS EAST               00303658      1,225.50        0.00
+  39.  RG-035     REMINGS EAST               00485869      5,802.50      102.50
+  40.  RG-042     PADUANO, RAMIRO, T         00485932      2,000.00        0.00
+  41.  RG-048     BALDEVARONA MA CECILIA D   00726097          0.00      133.00
+  42.  RG-056     ALIMON, ANGELES, M         00150792        851.30        0.00
+  43.  RG-057     MARQUEZ, MEDARDO/RHEA, I   00155993          0.00      402.52
+  44.  RG-074     AMAGUIN, REYNALDO DANTE,   00039243        797.35        0.00
+  45.  RG-112     VILLARINO, JUVY GRACE, N   00333196      1,649.30        0.00
+  46.  RG-140     PADILLA, FLORDELIZA, X     00725949          0.00      145.00
+  47.  RG-182     DYNAWIL FROZEN, FOODS,     00289960          0.00    1,599.16
+  48.  RG-233     LAMES, CHERYL ANN          00150802      1,176.90        0.00
+  49.  RG-235     BCD CHRISTIAN REFORMED, C  00214086          0.00      369.10
+  50.  RG-257     SIAN, MA. THERESA, X       00234486          0.00      309.00
+
+
+                               Lopues East Center                               
+                             A/R SALES BY CUSTOMER                              
+                            06/16/2007 To 06/16/2007                            
+
+ #      Card No.    Account                  Reference    Grocery  DryGoods  	
+------ ---------- ------------------------- ---------- ------------ ------------ 
+  51.  RG-257     SIAN, MA. THERESA, X       00234488          0.00      133.11
+  52.  RG-257     SIAN, MA. THERESA, X       00234485          0.00      243.00
+  53.  RG-257     SIAN, MA. THERESA, X       00029442        617.00        0.00
+  54.  RG-282     SY, MA.FE/BENJAMIN, A      00333280      2,712.50        0.00
+  55.  RG-326     LEDESMA, ANA, C            00303785      1,693.25        0.00
+  56.  RG-367     CABALQUINTO, DAISYLENE, A  00725818          0.00      151.00
+  57.  RG-380     DADIVAS, CELINA, C         00485936      5,000.00        0.00
+  58.  RTA020     ESTRELLANES, ROSELYN, X    00188445          0.00      192.00
+  59.  RTA020     ESTRELLANES, ROSELYN, X    00216486        733.42        0.00
+  60.  RTA024     DESABILLE, JESIELYN,       00552897      1,601.84      112.00
+  61.  VLG003     JALLORINA ,SYLVIA MAE      00038448        736.53        0.00
+  62.  VLG005     DELGADO, SHIELA MAE        00234538          0.00      619.00
+------ ---------- ------------------------- ---------- ------------ ------------ 
+    TOTAL COUNT : 62                                      43,207.35   14,164.30
+------ ---------- ------------------------- ---------- ------------ ------------ 
+Total Grocery  :    43,207.35
+Total Drygoods :    14,164.30
+
+
+

@@ -1,0 +1,3 @@
+The cab file for your application has been built as 'C:\shared\tcp-Socket\Deployment\tcpsocket-Printer.CAB'.
+
+There is also a batch file in the support directory (C:\shared\tcp-Socket\Deployment\Support\tcpsocket-Printer.BAT) that will allow you to recreate the cab file in case you make changes to some of the files.

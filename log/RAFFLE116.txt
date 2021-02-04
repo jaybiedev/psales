@@ -1,0 +1,25 @@
+          LOPUES EAST CENTER          
+       Villamonte, Bacolod City       
+RunDate:01/07/2009 7:00pm      00000419
+Term/Serial No.       16/EPSONAEFK011292
+Cashier:Remger Besana SN:9649000004190  
+----------------------------------------
+Name    :MONREAL LILYMAY C             
+Card    :08000003484                   
+
+PROJECT GK                     5/Cpn                                 
+Transaction 01/07/2009        
+#Coupons:1                             
+#From   :00002579                      
+#To     :00002579                      
+
+Points Converted  :5       
+Points Balance    :324.37  
+----------------------------------------
+
+
+
+
+
+
+

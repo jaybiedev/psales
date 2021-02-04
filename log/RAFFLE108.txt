@@ -1,0 +1,25 @@
+          LOPUES EAST CENTER          
+       Villamonte, Bacolod City       
+RunDate:01/10/2009 6:37pm      00000420
+Term/Serial No.       08/EPSONAEFK011300
+Cashier:Remger Besana SN:768000004206   
+----------------------------------------
+Name    :LACUAS, JANE, G               
+Card    :LBD-014                       
+
+PROJECT GK                     5/Cpn                                 
+Transaction 01/10/2009        
+#Coupons:2                             
+#From   :00002580                      
+#To     :00002581                      
+
+Points Converted  :10      
+Points Balance    :450.72  
+----------------------------------------
+
+
+
+
+
+
+

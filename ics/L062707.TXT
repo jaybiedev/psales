@@ -1,0 +1,23 @@
+LADIES                   ;     291;    30960.26
+HARDWARE                 ;     346;    20776.30
+THREAD & ACCESSORIES     ;     112;      750.10
+SOS                      ;    3972;    60731.84
+SPORTS                   ;      61;     5406.70
+GLASSWARE                ;     797;    39815.29
+TEXTILE                  ;      87;     3625.89
+NOVELTIES                ;      40;     2293.15
+RADIO/ELECTRICAL         ;      56;    11794.70
+BATTERY                  ;       4;       80.00
+MENS                     ;     133;    17434.28
+CHILDRENS                ;     271;    25793.71
+WRAPPING                 ;      23;      426.25
+FURNITURE                ;       3;     4686.00
+COSMETICS                ;     178;     8261.65
+LUGGAGE                  ;       3;      573.50
+BOOKS                    ;     225;    13136.15
+APPLIANCE                ;       6;     6378.00
+SHOES & BAGS             ;      59;    12707.81
+TOYS                     ;     376;    18811.30
+GROCERY                  ;   32782;   937605.35
+JEWELRY                  ;     111;     6650.00
+RELIGIOUS                ;      66;     3289.20

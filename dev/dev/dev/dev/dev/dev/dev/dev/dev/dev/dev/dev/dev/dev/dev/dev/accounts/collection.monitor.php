@@ -1,0 +1,161 @@
+<?
+if (!session_is_registered("aRep"))
+{
+	session_register("aRep");
+	$aRep = null;
+	$aRep = array();
+}
+
+if ($p1 != '')
+{
+	$aRep['date'] = $_REQUEST['date'];
+	$aRep['xSearch'] = $_REQUEST['xSearch'];
+	$aRep['searchby'] = $_REQUEST['searchby'];
+}
+if ($aRep['date'] == '') $aRep['date']=date('m/d/Y');
+if ($aRep['searchby'] == '') $aRep['searchby'] = 'collection_id';
+
+if ($p1 == 'Go')
+{
+	$aRep['date'] = $_REQUEST['date'];
+	$aRep['mrefresh'] = $_REQUEST['mrefresh'];
+	$aRep['terminal'] = $_REQUEST['terminal'];
+	$aRep['xSearch'] = $_REQUEST['xSearch'];
+	$aRep['searchby'] = $_REQUEST['searchby'];
+}
+elseif ($p1 == 'REPRINT' && $id != '')
+{
+		$q = "select * 
+						from 
+							collection, account 
+						where  
+							account.account_id=collection.account_id  and
+							collection_id = '$id'";
+							
+	$qr = @pg_query($q) or message(pg_errormessage());
+	$r = @pg_fetch_assoc($qr);
+	$aColl = $r;
+
+	$q = "select * from reward where invoice='".$aColl['collection_id']."' and account_id='".$aColl['account_id']."'";
+	$qr = @pg_query($q) or message(pg_errormessage());
+	$r = @pg_fetch_object($qr);
+	$aColl['reward_total'] = $r->points_in;
+	$aColl['REPRINT'] = 1;
+	
+	include_once('accountbalance.php');
+	$aReward = rewardBalance($aColl['account_id']);
+
+	include_once('collection.print.php');
+	
+	$aColl = null;
+	$aColl = array();
+}
+
+?>
+<meta http-equiv="refresh" <?= ($aRep['mrefresh'] > '0' ? ' content= '.$aRep['mrefresh'] : '');?>>
+<form action="" method="post" name="f1" id="f1">
+  <table width="90%" border="0" align="center" cellpadding="0" cellspacing="0">
+    <tr> 
+      <td background="../graphics/table0_horizontal.PNG"><strong>&nbsp;<img src="../graphics/bluelist.gif" width="16" height="17"> 
+        <font color="#FFFFFF" size="2" face="Verdana, Arial, Helvetica, sans-serif">Payment 
+        Monitor</font></strong></td>
+    </tr>
+    <tr> 
+      <td> <font size="2" face="Verdana, Arial, Helvetica, sans-serif"> Audit 
+        Date 
+        <input name="date" type="text" id="date" value="<?= $aRep['date'];?>" size="8" onBlur="IsValidDate(this,'MM/dd/yyyy')" onKeyUp="setDate(this,'MM/dd/yyyy','en')">
+        <img src="../graphics/dwn-arrow-grn.gif" onclick="popUpCalendar(this, f1.date, 'mm/dd/yyyy')"> 
+        Terminal 
+        <input name="terminal" type="text" id="terminal" value="<?= $aRep['terminal'];?>" size="5">
+		<?= lookUpAssoc('mrefresh',array('Auto Refresh'=>'10','20 Seconds'=>'20','30 Seconds'=>'30','No Refresh'=>'0'),$aRep['mrefresh']);?>
+        <input name="p1" type="submit" id="p1" value="Go">
+        Search For 
+        <input name="xSearch" type="text" id="xSearch" value="<?= $aRep['xSearch'];?>" size="12">
+        <?= lookUpAssoc('searchby',array('Receipt'=>'collection_id', 'Card No'=>'cardno','Account'=>'account'),$aRep['searchby']);?>
+        <input name="p1" type="submit" id="p1" value="Search">
+        </font></td>
+    </tr>
+    <tr>
+      <td><hr></td>
+    </tr>
+  </table>
+  <?
+  	$q = "select * 
+				from 
+					collection ,
+					account,
+					admin
+				where 
+					account.account_id=collection.account_id and 
+					admin.admin_id=collection.admin_id and 
+					collection.date='".mdy2ymd($aRep['date'])."'";
+					
+	if ($aRep['terminal'] != '')
+	{
+		$q .= " and terminal = '".$aRep['terminal']."'";
+	}
+	if ($aRep['xSearch'] != '')
+	{
+			$q .= "	 and ".$aRep['searchby']." = '".$aRep['xSearch']."'";
+	}
+	$q .= " order  by ".$aRep['searchby']." desc ";
+
+	$qr = @pg_query($q) or message(pg_errormessage());
+  ?>
+  <table width="90%" border="0" align="center" cellpadding="1" cellspacing="1" bgcolor="#EFEFEF">
+    <tr bgcolor="#D2DEE5"> 
+      <td width="3%" align="center"><strong><font size="2" face="Verdana, Arial, Helvetica, sans-serif">#</font></strong></td>
+      <td width="7%"><strong><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Receipt</font></strong></td>
+      <td width="7%"><strong><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
+        Date</font></strong></td>
+      <td width="4%"><strong><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Time</font></strong></td>
+      <td width="8%"><strong><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Amount</font></strong></td>
+      <td width="5%"><strong><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Card#</font></strong></td>
+      <td width="20%"><strong><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Account</font></strong></td>
+      <td width="2%"><strong><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Term</font></strong></td>
+      <td width="14%"><strong><font size="2" face="Verdana, Arial, Helvetica, sans-serif">Audit</font></strong></td>
+      <td width="7%">&nbsp;</td>
+    </tr>
+    <?
+	$ctr=0;
+	while ($r = @pg_fetch_object($qr))
+	{
+		$ctr++;
+	?>
+    <tr bgcolor="#FFFFFF" onMouseOver="bgColor='#FFFFCC'" onMouseOut="bgColor='#FFFFFF'"> 
+      <td align="right"><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
+        <?= $ctr;?>
+        .</font></td>
+      <td align="center"><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
+        <?= str_pad($r->collection_id,9,'0',str_pad_left);?>
+        </font></td>
+      <td align="center"><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
+        <?= ymd2mdy($r->date);?>
+        </font></td>
+      <td align="center"><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
+        <?= $r->time;?>
+        </font></td>
+      <td align="right"><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
+        <?= number_format($r->amount_total,2);?>
+        </font></td>
+      <td align="center"><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
+        <?= $r->cardno;?>
+        </font></td>
+      <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif">
+        <?= trim($r->cardname);?>
+        </font></td>
+      <td align="center"><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
+        <?= $r->terminal;?>
+        </font></td>
+      <td><font size="2" face="Verdana, Arial, Helvetica, sans-serif"> 
+        <?= $r->username;?>
+        </font></td>
+      <td><font size="2"><a href="javascript: document.getElementById('f1').action='?p=../accounts/collection.monitor&p1=REPRINT&id=<?=$r->collection_id;?>'; document.getElementById('f1').submit()">Re-Print</a></font></td>
+    </tr>
+    <?
+	}
+	?>
+  </table>
+	
+</form>
+

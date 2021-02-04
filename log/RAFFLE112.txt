@@ -1,0 +1,25 @@
+          LOPUES EAST CENTER          
+       Villamonte, Bacolod City       
+RunDate:02/02/2009 3:30pm      00000429
+Term/Serial No.       12/EPSONAEFK011297
+Cashier:ELVIE JANE LA SN:281000004295   
+----------------------------------------
+Name    :CANO, EDNA, A                 
+Card    :HOR-008                       
+
+PROJECT GK                     5/Cpn                                 
+Transaction 02/02/2009        
+#Coupons:20                            
+#From   :00002703                      
+#To     :00002722                      
+
+Points Converted  :100     
+Points Balance    :148.39  
+----------------------------------------
+
+
+
+
+
+
+
