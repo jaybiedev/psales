@@ -1,9 +1,0 @@
-Unable To Insert Into Sales Detail on BARCODE [2603778] 
-ERROR:  column "l" of relation "sd_2007" does not existinsert into sd_2007 
-										(sales_header_id, stock_id, barcode, fraction,qty, price1,
-											price, cdisc, sdisc, discount, amount, tax ,l)
-									values 
-										('50','113103',
-						                    '2603778','1', '1',
-											'357.50', '357.50', '0', '0',
-											'0', '357.5',	'0')FATAL PROBLEM: Unable to Save Transaction. Commit Error No.: 3
